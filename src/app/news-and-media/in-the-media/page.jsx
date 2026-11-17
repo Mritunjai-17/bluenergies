@@ -17,9 +17,9 @@ export default function InTheMediaPage() {
       />
 
       <Section background="paper">
-        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+        <div>
           <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Industry Coverage & Features</h2>
-          <p className="lede" style={{ color: 'var(--muted)', marginBottom: '2.5rem' }}>
+          <p className="lede" style={{ color: 'var(--muted)', marginBottom: '2.5rem', maxWidth: '75ch' }}>
             Articles and technical reports published by independent energy publications tracking West Africa’s deepwater margin and the Harper Basin work programme.
           </p>
 

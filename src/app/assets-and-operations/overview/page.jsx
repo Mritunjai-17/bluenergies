@@ -92,9 +92,9 @@ export default function AssetsOverviewPage() {
 
       {/* Section 3: The Work Programme */}
       <Section background="paper" id="the-work-programme">
-        <div style={{ maxWidth: '900px' }}>
+        <div>
           <h2 style={{ fontSize: '2.2rem', marginBottom: '1.25rem' }}>3. The work programme: Modern seismic & seabed surveys</h2>
-          <p className="lede" style={{ color: 'var(--muted)', marginBottom: '1.8rem' }}>
+          <p className="lede" style={{ color: 'var(--muted)', marginBottom: '1.8rem', maxWidth: '75ch' }}>
             BluEnergies and TotalEnergies are executing a comprehensive multi-phase technical campaign designed to mature high-grade geological prospects into drill-ready well targets.
           </p>
 

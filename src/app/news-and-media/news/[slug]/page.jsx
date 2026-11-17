@@ -38,12 +38,12 @@ export default async function NewsDetailPage({ params }) {
     <>
       {/* News Detail Header */}
       <header className="page-hero" style={{ minHeight: '260px', paddingTop: '130px', paddingBottom: '50px' }}>
-        <div className="container" style={{ maxWidth: '900px' }}>
+        <div className="container">
           <Eyebrow text="News release" theme="dark" />
           <div style={{ color: 'var(--teal)', fontWeight: 500, fontSize: '1rem', marginBottom: '12px', letterSpacing: '0.02em' }}>
             {article.date}
           </div>
-          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', marginBottom: 0 }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', marginBottom: 0, maxWidth: '28ch' }}>
             {article.title}
           </h1>
         </div>
@@ -55,7 +55,7 @@ export default async function NewsDetailPage({ params }) {
 
       {/* News Body Section */}
       <Section background="paper">
-        <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '90ch', margin: '0 auto' }}>
           {/* Back Navigation Link */}
           <div style={{ marginBottom: '32px' }}>
             <Button href="/news-and-media/news/" variant="quiet">

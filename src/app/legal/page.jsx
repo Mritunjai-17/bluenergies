@@ -16,7 +16,7 @@ export default function LegalPage() {
       />
 
       <Section background="paper">
-        <div style={{ maxWidth: '860px', margin: '0 auto', fontSize: '1rem', lineHeight: 1.75, color: 'var(--ink)' }}>
+        <div style={{ maxWidth: '1080px', margin: '0 auto', fontSize: '1rem', lineHeight: 1.75, color: 'var(--ink)' }}>
           <h2 style={{ fontSize: '1.8rem', marginBottom: '1.25rem' }}>Forward-Looking Statements & Cautionary Advisory</h2>
           <p>
             Certain statements contained on this website constitute &quot;forward-looking statements&quot; or &quot;forward-looking information&quot; within the meaning of applicable Canadian securities legislation (collectively, &quot;forward-looking statements&quot;). Forward-looking statements are typically identified by words such as &quot;anticipate&quot;, &quot;continue&quot;, &quot;estimate&quot;, &quot;expect&quot;, &quot;forecast&quot;, &quot;may&quot;, &quot;will&quot;, &quot;project&quot;, &quot;could&quot;, &quot;plan&quot;, &quot;intend&quot;, &quot;should&quot;, &quot;believe&quot;, &quot;outlook&quot;, and similar expressions.

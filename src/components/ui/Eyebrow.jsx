@@ -3,7 +3,7 @@ export default function Eyebrow({
   theme = 'light',
   className = ''
 }) {
-  const waveColor = theme === 'dark' ? '#51C2C9' : '#17808C';
+  const waveColor = theme === 'dark' ? '#51C2C9' : '#16A6A6';
 
   return (
     <div className={`eyebrow eyebrow-${theme} ${className}`.trim()}>

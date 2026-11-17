@@ -78,9 +78,9 @@ export default function AboutUsPage() {
 
       {/* Geological Context: The West Africa Atlantic Margin */}
       <Section background="foam">
-        <div style={{ maxWidth: '920px' }}>
+        <div>
           <h2 style={{ fontSize: '2.2rem', marginBottom: '1.5rem' }}>The geological thesis: Atlantic margin Cretaceous fans</h2>
-          <p className="lede" style={{ color: 'var(--muted)', marginBottom: '1.8rem' }}>
+          <p className="lede" style={{ color: 'var(--muted)', marginBottom: '1.8rem', maxWidth: '75ch' }}>
             Over the past two decades, deepwater basin floor fan plays have emerged as the most prolific hydrocarbon exploration target along Africa’s Atlantic margin.
           </p>
           <p>

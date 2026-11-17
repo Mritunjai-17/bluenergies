@@ -19,7 +19,7 @@ export default function StockInformationPage() {
 
       {/* Stock Ticker Widget Section */}
       <Section background="paper">
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+        <div>
           <StockTicker />
 
           {/* Notice regarding sample data */}

@@ -100,7 +100,7 @@ export default function RequestForInformationPage() {
       />
 
       <Section background="paper">
-        <div style={{ maxWidth: '780px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1040px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Investor & Industry Inquiry</h2>
           <p className="lede" style={{ color: 'var(--muted)', marginBottom: '2.5rem' }}>
             Complete the form below to connect with our corporate office. All requests are routed to management for review.

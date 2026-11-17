@@ -18,9 +18,9 @@ export default function PresentationsPage() {
       />
 
       <Section background="paper">
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+        <div>
           <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Corporate Documents & Presentations</h2>
-          <p className="lede" style={{ color: 'var(--muted)', marginBottom: '2.5rem' }}>
+          <p className="lede" style={{ color: 'var(--muted)', marginBottom: '2.5rem', maxWidth: '75ch' }}>
             Key information documents detailing our exploration asset portfolio, regional geology along the West African margin, and corporate capital structure.
           </p>
 

@@ -121,16 +121,26 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .container {
-  width: 100%;
-  max-width: var(--content-max-width);
+  width: min(var(--container-width-desktop, 94%), var(--content-max-width, 1760px));
+  max-width: var(--content-max-width, 1760px);
   padding-left: var(--container-gutter);
   padding-right: var(--container-gutter);
+  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
   .container {
+    width: var(--container-width-tablet, 95%);
+    padding-left: clamp(16px, 2.5vw, 24px);
+    padding-right: clamp(16px, 2.5vw, 24px);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: var(--container-width-mobile, 92%);
     padding-left: var(--container-gutter-mobile);
     padding-right: var(--container-gutter-mobile);
   }

@@ -61,9 +61,9 @@ export default function OutlookPage() {
 
       {/* Exploration Catalysts Timeline */}
       <Section background="foam">
-        <div style={{ maxWidth: '900px' }}>
+        <div>
           <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Exploration Roadmap & Catalysts</h2>
-          <p style={{ color: 'var(--muted)', marginBottom: '2rem' }}>
+          <p style={{ color: 'var(--muted)', marginBottom: '2rem', maxWidth: '75ch' }}>
             Key operational milestones driving de-risking and shareholder value across the Harper Basin licence.
           </p>
 

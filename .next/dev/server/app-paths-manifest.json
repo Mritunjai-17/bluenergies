@@ -1,3 +1,5 @@
 {
+  "/corporate/board-management/page": "app/corporate/board-management/page.js",
+  "/corporate/corporate-governance/page": "app/corporate/corporate-governance/page.js",
   "/page": "app/page.js"
 }

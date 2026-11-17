@@ -22,8 +22,8 @@ export default function NewsPage() {
         lede="Official regulatory announcements, exploration updates, and corporate disclosures from BluEnergies Ltd."
       />
 
-      <Section background="abyss">
-        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+      <Section background="warm-white">
+        <div>
           {/* Year Filter Bar */}
           <div className="filter-bar" style={{ marginBottom: '40px' }}>
             {years.map((year) => (
@@ -39,7 +39,7 @@ export default function NewsPage() {
           </div>
 
           {/* Chronological News Rows List */}
-          <div className="news-list" style={{ borderTop: '1px solid rgba(81, 194, 201, 0.28)' }}>
+          <div className="news-list" style={{ borderTop: '1px solid var(--line)' }}>
             {filteredNews.map((item) => (
               <div key={item.slug}>
                 <NewsRow

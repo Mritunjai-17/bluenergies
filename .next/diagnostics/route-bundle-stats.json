@@ -1,10 +1,10 @@
 [
   {
     "route": "/",
-    "firstLoadUncompressedJsBytes": 488644,
+    "firstLoadUncompressedJsBytes": 505101,
     "firstLoadChunkPaths": [
       ".next\\static\\chunks\\26e9qgo_j7m53.js",
-      ".next\\static\\chunks\\1066xxzys-fyo.js",
+      ".next\\static\\chunks\\3kzulsbd_nv3t.js",
       ".next\\static\\chunks\\310vm2bl3xxpt.js",
       ".next\\static\\chunks\\1wnov70f88xjy.js",
       ".next\\static\\chunks\\39_j1bdzreq0m.js",
@@ -14,10 +14,10 @@
   },
   {
     "route": "/news-and-media/news",
-    "firstLoadUncompressedJsBytes": 488258,
+    "firstLoadUncompressedJsBytes": 488273,
     "firstLoadChunkPaths": [
       ".next\\static\\chunks\\26e9qgo_j7m53.js",
-      ".next\\static\\chunks\\19g-mh39v8u44.js",
+      ".next\\static\\chunks\\3un7cpob9821_.js",
       ".next\\static\\chunks\\310vm2bl3xxpt.js",
       ".next\\static\\chunks\\1wnov70f88xjy.js",
       ".next\\static\\chunks\\39_j1bdzreq0m.js",
@@ -27,10 +27,10 @@
   },
   {
     "route": "/contact/request-for-information",
-    "firstLoadUncompressedJsBytes": 487021,
+    "firstLoadUncompressedJsBytes": 487086,
     "firstLoadChunkPaths": [
       ".next\\static\\chunks\\26e9qgo_j7m53.js",
-      ".next\\static\\chunks\\30h60xwhaa0aw.js",
+      ".next\\static\\chunks\\3fo6279fehvla.js",
       ".next\\static\\chunks\\310vm2bl3xxpt.js",
       ".next\\static\\chunks\\1wnov70f88xjy.js",
       ".next\\static\\chunks\\39_j1bdzreq0m.js",

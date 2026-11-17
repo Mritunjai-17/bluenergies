@@ -1,12 +1,17 @@
 export default function Section({
-  background = 'paper',
+  background = 'warm-white',
   id,
   className = '',
   containerClassName = '',
   style,
   children
 }) {
-  const isDark = background === 'abyss' || background === 'navy';
+  const isDark =
+    background === 'abyss' ||
+    background === 'navy' ||
+    background === 'dark-navy' ||
+    background === 'secondary-dark' ||
+    background === 'dark';
   const themeClass = isDark ? 'theme-dark' : 'theme-light';
 
   return (
