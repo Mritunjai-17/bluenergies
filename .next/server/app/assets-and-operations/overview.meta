@@ -1,0 +1,39 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/assets-and-operations/layout,_N_T_/assets-and-operations/overview/layout,_N_T_/assets-and-operations/overview/page,_N_T_/assets-and-operations/overview"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/assets-and-operations/overview/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 64,
+    "slots": {
+      "children": {
+        "hints": 96,
+        "slots": {
+          "children": {
+            "hints": 96,
+            "slots": {
+              "children": {
+                "hints": 160,
+                "slots": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/a045d05c27af000fad1bf3ce675f31ec09966ce5f434707c496ca6402883a40f/$/assets-and-operations/overview",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/assets-and-operations/overview/page"
+    },
+    "isFallback": false
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/assets-and-operations/overview/page": "/assets-and-operations/overview",
+  "/contact/contact-details/page": "/contact/contact-details",
+  "/contact/request-for-information/page": "/contact/request-for-information",
+  "/corporate/about-us/page": "/corporate/about-us",
+  "/corporate/board-management/page": "/corporate/board-management",
+  "/corporate/corporate-governance/page": "/corporate/corporate-governance",
+  "/investors/agm/page": "/investors/agm",
+  "/investors/financials/page": "/investors/financials",
+  "/investors/outlook/page": "/investors/outlook",
+  "/investors/presentations/page": "/investors/presentations",
+  "/investors/stock-information/page": "/investors/stock-information",
+  "/legal/page": "/legal",
+  "/news-and-media/in-the-media/page": "/news-and-media/in-the-media",
+  "/news-and-media/news/[slug]/page": "/news-and-media/news/[slug]",
+  "/news-and-media/news/page": "/news-and-media/news",
+  "/page": "/"
+}

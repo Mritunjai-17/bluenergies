@@ -1,0 +1,20 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/assets-and-operations/overview/page": "app/assets-and-operations/overview/page.js",
+  "/contact/contact-details/page": "app/contact/contact-details/page.js",
+  "/contact/request-for-information/page": "app/contact/request-for-information/page.js",
+  "/corporate/about-us/page": "app/corporate/about-us/page.js",
+  "/corporate/board-management/page": "app/corporate/board-management/page.js",
+  "/corporate/corporate-governance/page": "app/corporate/corporate-governance/page.js",
+  "/investors/agm/page": "app/investors/agm/page.js",
+  "/investors/financials/page": "app/investors/financials/page.js",
+  "/investors/outlook/page": "app/investors/outlook/page.js",
+  "/investors/presentations/page": "app/investors/presentations/page.js",
+  "/investors/stock-information/page": "app/investors/stock-information/page.js",
+  "/legal/page": "app/legal/page.js",
+  "/news-and-media/in-the-media/page": "app/news-and-media/in-the-media/page.js",
+  "/news-and-media/news/[slug]/page": "app/news-and-media/news/[slug]/page.js",
+  "/news-and-media/news/page": "app/news-and-media/news/page.js",
+  "/page": "app/page.js"
+}

@@ -1,0 +1,170 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/",
+      "destination": "/:file",
+      "internal": true,
+      "priority": true,
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-nextjs-data"
+        }
+      ],
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+))/$"
+    },
+    {
+      "source": "/:notfile((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+)",
+      "destination": "/:notfile/",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+))$"
+    }
+  ],
+  "headers": [],
+  "onMatchHeaders": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/news-and-media/news/[slug]",
+      "regex": "^/news\\-and\\-media/news/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/news\\-and\\-media/news/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/assets-and-operations/overview",
+      "regex": "^/assets\\-and\\-operations/overview(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/assets\\-and\\-operations/overview(?:/)?$"
+    },
+    {
+      "page": "/contact/contact-details",
+      "regex": "^/contact/contact\\-details(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact/contact\\-details(?:/)?$"
+    },
+    {
+      "page": "/contact/request-for-information",
+      "regex": "^/contact/request\\-for\\-information(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact/request\\-for\\-information(?:/)?$"
+    },
+    {
+      "page": "/corporate/about-us",
+      "regex": "^/corporate/about\\-us(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/corporate/about\\-us(?:/)?$"
+    },
+    {
+      "page": "/corporate/board-management",
+      "regex": "^/corporate/board\\-management(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/corporate/board\\-management(?:/)?$"
+    },
+    {
+      "page": "/corporate/corporate-governance",
+      "regex": "^/corporate/corporate\\-governance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/corporate/corporate\\-governance(?:/)?$"
+    },
+    {
+      "page": "/investors/agm",
+      "regex": "^/investors/agm(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/investors/agm(?:/)?$"
+    },
+    {
+      "page": "/investors/financials",
+      "regex": "^/investors/financials(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/investors/financials(?:/)?$"
+    },
+    {
+      "page": "/investors/outlook",
+      "regex": "^/investors/outlook(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/investors/outlook(?:/)?$"
+    },
+    {
+      "page": "/investors/presentations",
+      "regex": "^/investors/presentations(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/investors/presentations(?:/)?$"
+    },
+    {
+      "page": "/investors/stock-information",
+      "regex": "^/investors/stock\\-information(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/investors/stock\\-information(?:/)?$"
+    },
+    {
+      "page": "/legal",
+      "regex": "^/legal(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/legal(?:/)?$"
+    },
+    {
+      "page": "/news-and-media/in-the-media",
+      "regex": "^/news\\-and\\-media/in\\-the\\-media(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/news\\-and\\-media/in\\-the\\-media(?:/)?$"
+    },
+    {
+      "page": "/news-and-media/news",
+      "regex": "^/news\\-and\\-media/news(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/news\\-and\\-media/news(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

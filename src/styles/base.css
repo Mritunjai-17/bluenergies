@@ -1,0 +1,206 @@
+/* BluEnergies Ltd. — Base Styles */
+@import './tokens.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--display);
+  font-weight: 500;
+  color: inherit;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-optical-sizing: auto;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--font-h1);
+  line-height: 1.12;
+  margin-bottom: 1.25rem;
+}
+
+h2 {
+  font-size: var(--font-h2);
+  line-height: 1.18;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: var(--font-h3);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  font-family: var(--body);
+  font-size: var(--font-body);
+  line-height: 1.65;
+  color: inherit;
+  max-width: 65ch;
+  margin-bottom: 1.25rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.lede {
+  font-size: var(--font-lede);
+  line-height: 1.55;
+  max-width: 65ch;
+  color: inherit;
+  font-weight: 400;
+}
+
+small, .text-small {
+  font-size: var(--font-small);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration-skip-ink: auto;
+  transition: color var(--transition-fast);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background: var(--navy);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  z-index: 9999;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 14px;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-gutter);
+  padding-right: var(--container-gutter);
+}
+
+@media (max-width: 860px) {
+  .container {
+    padding-left: var(--container-gutter-mobile);
+    padding-right: var(--container-gutter-mobile);
+  }
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Horizontal Rule / Divider */
+.divider {
+  border: 0;
+  height: 1px;
+  background: var(--line);
+  margin: 3rem 0;
+}
+
+.divider-teal {
+  border: 0;
+  height: 1px;
+  background: rgba(81, 194, 201, 0.28);
+  margin: 2rem 0;
+}
+
+/* Table scroll wrapper for mobile */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--font-small);
+}
+
+th, td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  font-family: var(--body);
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--foam);
+}
+
+/* Content Needed notice */
+.content-needed {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(227, 155, 47, 0.12);
+  border: 1px dashed var(--flare);
+  border-radius: 4px;
+  color: #a3650a;
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin: 4px 0;
+}

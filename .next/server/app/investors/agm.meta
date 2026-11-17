@@ -1,0 +1,39 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/investors/layout,_N_T_/investors/agm/layout,_N_T_/investors/agm/page,_N_T_/investors/agm"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/investors/agm/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 64,
+    "slots": {
+      "children": {
+        "hints": 96,
+        "slots": {
+          "children": {
+            "hints": 96,
+            "slots": {
+              "children": {
+                "hints": 160,
+                "slots": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/dd499e566f0cc35e87b6baa7cc14112a50354d9164a7cef5d2a3d6f4eeaf634c/$/investors/agm",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/investors/agm/page"
+    },
+    "isFallback": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/corporate/layout,_N_T_/corporate/board-management/layout,_N_T_/corporate/board-management/page,_N_T_/corporate/board-management"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/corporate/board-management/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 64,
+    "slots": {
+      "children": {
+        "hints": 96,
+        "slots": {
+          "children": {
+            "hints": 96,
+            "slots": {
+              "children": {
+                "hints": 160,
+                "slots": null
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/ce0788f7b4ecd8d633da16bc96433cec35c3c952fbce0751557d496b6d8ea95a/$/corporate/board-management",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/corporate/board-management/page"
+    },
+    "isFallback": false
+  }
+}
