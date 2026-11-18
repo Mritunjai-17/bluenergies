@@ -6,20 +6,25 @@ import Button from '../ui/Button';
 export default function Hero() {
   return (
     <section className="hero-wrapper" aria-label="Introduction">
-      {/* 1. Real Oceanic Photographic Background (z-index: 1) */}
+      {/* 1. Offshore Exploration Vessel Cinematic Video Background (z-index: 1) */}
       <div className="hero-bg-layer" aria-hidden="true">
-        <img
-          src="/img/hero-seabed-bg.jpg"
-          alt="Deepwater oceanic margin with natural sunlight caustics and sediment seabed"
-          className="hero-bg-photo"
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="hero-bg-video"
+        >
+          <source src="/videos/hero-ship.mp4" type="video/mp4" />
+        </video>
         <div className="hero-bg-overlay"></div>
       </div>
 
       {/* 2. Main Centered Hero Container (z-index: 3) */}
       <div className="hero-container">
         <div className="hero-content-grid">
-          {/* Left Column: Narrative & Action CTAs */}
+          {/* Narrative & Action CTAs */}
           <div className="hero-col-narrative">
             <div className="hero-anim-1">
               <Eyebrow text="WEST AFRICA DEEPWATER EXPLORER" theme="dark" className="hero-eyebrow" />
@@ -42,51 +47,6 @@ export default function Hero() {
               <Button href="/investors/outlook/" variant="secondary" theme="dark">
                 Investor information &rarr;
               </Button>
-            </div>
-          </div>
-
-          {/* Right Column: Key Operational Metrics with Vertical Hairline Rule & Icons */}
-          <div className="hero-col-stats hero-anim-3">
-            <div className="hero-stats-group">
-              {/* Stat 1: 35% with Strata Layers Icon */}
-              <div className="hero-stat-card">
-                <div className="hero-stat-icon-wrap" aria-hidden="true">
-                  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#51C2C9" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                    <polyline points="2 12 12 17 22 12" />
-                    <polyline points="2 17 12 22 22 17" />
-                  </svg>
-                </div>
-
-                <div className="hero-stat-content">
-                  <span className="hero-stat-number">35%</span>
-                  <p className="hero-stat-desc">
-                    Interest in three Harper Basin blocks, offshore Liberia.
-                  </p>
-                </div>
-              </div>
-
-              {/* Horizontal Separator Rule */}
-              <div className="hero-stats-divider" aria-hidden="true"></div>
-
-              {/* Stat 2: 8,924 km² with Location Map Pin Icon */}
-              <div className="hero-stat-card">
-                <div className="hero-stat-icon-wrap" aria-hidden="true">
-                  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#51C2C9" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </div>
-
-                <div className="hero-stat-content">
-                  <span className="hero-stat-number hero-stat-area">
-                    8,924 <span className="stat-unit">km<sup>2</sup></span>
-                  </span>
-                  <p className="hero-stat-desc">
-                    Licence area, partnered with TotalEnergies under Reconnaissance Licence RL-003.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

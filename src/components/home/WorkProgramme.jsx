@@ -2,8 +2,10 @@
 
 import Section from '../ui/Section';
 import Eyebrow from '../ui/Eyebrow';
+import { useInView } from '../../hooks/useMotion';
 
 export default function WorkProgramme() {
+  const [gridRef, inView] = useInView({ threshold: 0.1 });
   const steps = [
     {
       num: '01',
@@ -86,30 +88,30 @@ export default function WorkProgramme() {
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M10 2v6.292a7 7 0 1 0 4 0V2"/>
           <path d="M8.5 2h7"/>
-          <path d="M8.5 14h7"/>
         </svg>
       ),
       scopeIcon: (
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-          <polyline points="2 17 12 22 22 17"/>
-          <polyline points="2 12 12 17 22 12"/>
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="12" y1="18" x2="12" y2="12"/>
+          <line x1="9" y1="15" x2="15" y2="15"/>
         </svg>
       ),
       statusIcon: (
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <path d="M10 2v6.292a7 7 0 1 0 4 0V2"/>
-          <path d="M8.5 2h7"/>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
         </svg>
       )
     },
     {
       num: '04',
       title: 'Prospect Delineation & Well Targeting',
-      contractor: 'TotalEnergies & BluEnergies G&G Consortium',
+      contractor: 'TotalEnergies & BluEnergies Consortium',
       scope: 'Blocks LB-26, LB-30, LB-31',
       status: 'Planned Next Stage (2026–2027)',
-      statusType: 'planned',
+      statusType: 'upcoming',
       desc: 'Full synthesis of reprocessed 3D seismic, AVO amplitude anomalies, and geochemical seepage data to rank drillable prospects and mature candidates for an exploration drilling campaign.',
       image: '/img/work-programme/programme-targeting.png',
       alt: 'High-amplitude Cretaceous turbidite fan prospect delineation and exploration well target map',
@@ -142,73 +144,84 @@ export default function WorkProgramme() {
   ];
 
   return (
-    <Section background="soft-blue" id="work-programme" className="programme-section">
-      {/* Background Topographic / Bathymetric Contours */}
-      <div className="programme-contours" aria-hidden="true">
-        <svg className="programme-contours-svg" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M-100 200 C300 120 700 280 1540 180" stroke="rgba(81, 194, 201, 0.22)" strokeWidth="1" />
-          <path d="M-100 260 C320 180 680 340 1540 240" stroke="rgba(81, 194, 201, 0.16)" strokeWidth="1" />
-          <path d="M-100 320 C340 240 660 400 1540 300" stroke="rgba(81, 194, 201, 0.12)" strokeWidth="1" />
-          <path d="M-100 380 C360 300 640 460 1540 360" stroke="rgba(81, 194, 201, 0.08)" strokeWidth="1" />
-        </svg>
-      </div>
+    <div ref={gridRef}>
+      <Section background="soft-blue" id="work-programme" className="programme-section">
+        <div className={`programme-header motion-fade-up ${inView ? 'is-in-view' : ''}`}>
+          <Eyebrow text="Exploration Progression" theme="light" />
+          <h2 className="programme-heading">
+            <span className="programme-heading-accent">Exploration</span> Work Programme
+          </h2>
+          <p className="programme-lede">
+            BluEnergies and operating partner TotalEnergies are actively executing a multi-disciplinary technical exploration programme across Reconnaissance Licence RL-003.
+          </p>
+        </div>
 
-      <div className="programme-header">
-        <Eyebrow text="Exploration Progression" theme="light" />
-        <h2 className="programme-heading">
-          <span className="programme-heading-accent">Exploration</span> Work Programme
-        </h2>
-        <p className="programme-lede">
-          BluEnergies and operating partner TotalEnergies are actively executing a multi-disciplinary technical exploration programme across Reconnaissance Licence RL-003.
-        </p>
-      </div>
-
-      <div className="programme-timeline-grid">
-        {steps.map((s, idx) => (
-          <div key={idx} className="programme-card">
-            {/* Left Visual Column: Number Tab + Technical Photo Strip */}
-            <div className="programme-visual-col">
-              <div className="programme-num-tab">
-                <span className="programme-num-text">{s.num}</span>
-              </div>
-              <div className="programme-visual-img-wrap">
-                <img
-                  src={s.image}
-                  alt={s.alt}
-                  className="programme-visual-img"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            {/* Right Content Area */}
-            <div className="programme-card-content">
-              <div className="programme-card-header">
-                <h3 className="programme-card-title">{s.title}</h3>
-                <span className={`programme-status-pill ${s.statusType}`}>
-                  <span className="status-pill-icon">{s.statusIcon}</span>
-                  <span>{s.status}</span>
-                </span>
-              </div>
-
-              <div className="programme-card-meta">
-                <div className="programme-meta-row">
-                  <span className="programme-meta-icon">{s.contractorIcon}</span>
-                  <span className="programme-meta-label">Contractor:</span>
-                  <span className="programme-meta-val">{s.contractor}</span>
-                </div>
-                <div className="programme-meta-row">
-                  <span className="programme-meta-icon">{s.scopeIcon}</span>
-                  <span className="programme-meta-label">Scope:</span>
-                  <span className="programme-meta-val">{s.scope}</span>
-                </div>
-              </div>
-
-              <p className="programme-card-desc">{s.desc}</p>
-            </div>
+        {/* Campaign Operational Ledger Ribbon (Human Agency Craft) */}
+        <div className="programme-campaign-ribbon">
+          <div className="campaign-ribbon-item">
+            <span className="ribbon-key">EXPLORATION CAMPAIGN</span>
+            <span className="ribbon-val">Phase 1: Subsurface De-Risking</span>
           </div>
-        ))}
-      </div>
-    </Section>
+          <div className="campaign-ribbon-item">
+            <span className="ribbon-key">GEOPHYSICAL CONTRACTOR</span>
+            <span className="ribbon-val">TGS ASA (Houston / London)</span>
+          </div>
+          <div className="campaign-ribbon-item">
+            <span className="ribbon-key">SURVEY VESSEL</span>
+            <span className="ribbon-val">R/V GYRE (TDI-Brooks)</span>
+          </div>
+          <div className="campaign-ribbon-item">
+            <span className="ribbon-key">CAMPAIGN TARGET</span>
+            <span className="ribbon-val">Well Spud Selection (2026–2027)</span>
+          </div>
+        </div>
+
+        <div className="programme-timeline-grid">
+          {steps.map((s, idx) => (
+            <div key={idx} className={`programme-card motion-fade-up stagger-${idx + 1} ${inView ? 'is-in-view' : ''}`}>
+              {/* Left Visual Column: Number Tab + Technical Photo Strip */}
+              <div className="programme-visual-col">
+                <div className="programme-num-tab">
+                  <span className="programme-num-text">{s.num}</span>
+                </div>
+                <div className="programme-visual-img-wrap">
+                  <img
+                    src={s.image}
+                    alt={s.alt}
+                    className="programme-visual-img"
+                  />
+                </div>
+              </div>
+
+              {/* Right Content Column */}
+              <div className="programme-card-content">
+                <div className="programme-card-header">
+                  <h3 className="programme-card-title">{s.title}</h3>
+                  <span className={`programme-status-pill ${s.statusType === 'active' ? 'active' : 'planned'}`}>
+                    <span className="programme-status-icon" aria-hidden="true">{s.statusIcon}</span>
+                    <span>{s.status}</span>
+                  </span>
+                </div>
+
+                <div className="programme-card-meta">
+                  <div className="programme-meta-row">
+                    <span className="programme-meta-icon">{s.contractorIcon}</span>
+                    <span className="programme-meta-label">Contractor:</span>
+                    <span className="programme-meta-val">{s.contractor}</span>
+                  </div>
+                  <div className="programme-meta-row">
+                    <span className="programme-meta-icon">{s.scopeIcon}</span>
+                    <span className="programme-meta-label">Scope:</span>
+                    <span className="programme-meta-val">{s.scope}</span>
+                  </div>
+                </div>
+
+                <p className="programme-card-desc">{s.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+    </div>
   );
 }

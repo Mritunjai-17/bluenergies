@@ -1,14 +1,19 @@
+'use client';
+
 import Link from 'next/link';
 import Section from '../ui/Section';
 import Eyebrow from '../ui/Eyebrow';
 import { news } from '../../data/news.ts';
+import { useInView } from '../../hooks/useMotion';
 
 export default function LatestNews() {
+  const [sectionRef, inView] = useInView({ threshold: 0.15 });
   const featured = news[0];
   const stacked = news.slice(1, 3);
 
   return (
-    <Section background="warm-white" id="latest-news" className="news-section">
+    <div ref={sectionRef}>
+      <Section background="warm-white" id="latest-news" className="news-section">
       {/* 1. Editorial Header Row */}
       <div className="news-header">
         <div className="news-header-left">
@@ -31,7 +36,7 @@ export default function LatestNews() {
       <div className="news-editorial-grid">
         {/* Left Column: Prominent Featured Card */}
         {featured && (
-          <article className="news-featured-card">
+          <article className={`news-featured-card motion-fade-up ${inView ? 'is-in-view' : ''}`}>
             <div className="news-featured-visual">
               <img
                 src="/img/news-vessel-hires.png"
@@ -79,8 +84,8 @@ export default function LatestNews() {
 
         {/* Right Column: Stacked Announcements */}
         <div className="news-stacked-list">
-          {stacked.map((item) => (
-            <article key={item.slug} className="news-stacked-item">
+          {stacked.map((item, idx) => (
+            <article key={item.slug} className={`news-stacked-item motion-fade-up stagger-${idx + 1} ${inView ? 'is-in-view' : ''}`}>
               <div className="news-stacked-meta">
                 <span className="news-stacked-date">{item.date}</span>
                 <span className="news-stacked-badge">TSXV Release</span>
@@ -110,5 +115,6 @@ export default function LatestNews() {
         </div>
       </div>
     </Section>
+  </div>
   );
 }

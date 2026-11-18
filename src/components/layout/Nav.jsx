@@ -9,6 +9,16 @@ import { site } from '../../data/site.ts';
 export default function Nav() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -31,7 +41,7 @@ export default function Nav() {
   return (
     <>
       <header className="nav-header">
-        <nav className="nav-pill" aria-label="Main Navigation">
+        <nav className={`nav-pill ${scrolled ? 'is-scrolled' : ''}`} aria-label="Main Navigation">
           {/* Logo Link */}
           <Link href="/" className="nav-logo-link" aria-label="BluEnergies Ltd. Homepage">
             <svg className="nav-logo-svg" viewBox="0 0 252 47" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BluEnergies">
