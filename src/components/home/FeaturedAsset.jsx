@@ -60,7 +60,7 @@ export default function FeaturedAsset() {
             {/* Block Specification Details */}
             <div className="blocks-badge-list">
               {/* LB-26 */}
-              <div className="block-badge-item">
+              <div className="block-badge-item motion-fade-up stagger-1">
                 <div className="block-badge-pill">LB-26</div>
                 <div className="block-badge-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -72,7 +72,7 @@ export default function FeaturedAsset() {
               </div>
 
               {/* LB-30 */}
-              <div className="block-badge-item">
+              <div className="block-badge-item motion-fade-up stagger-2">
                 <div className="block-badge-pill">LB-30</div>
                 <div className="block-badge-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -84,7 +84,7 @@ export default function FeaturedAsset() {
               </div>
 
               {/* LB-31 */}
-              <div className="block-badge-item">
+              <div className="block-badge-item motion-fade-up stagger-3">
                 <div className="block-badge-pill">LB-31</div>
                 <div className="block-badge-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -96,7 +96,7 @@ export default function FeaturedAsset() {
               </div>
             </div>
 
-            <div className="featured-asset-cta">
+            <div className="featured-asset-cta motion-fade-up stagger-2">
               <Button href="/assets-and-operations/overview/" variant="primary" className="featured-asset-btn">
                 <span>View assets &amp; operations</span>
                 <svg className="featured-btn-arrow" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -107,7 +107,7 @@ export default function FeaturedAsset() {
           </div>
 
           {/* Right Column: Technical Concession Map Card & Ownership Breakdown */}
-          <div className="assets-visual-col">
+          <div className={`assets-visual-col motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
             <div className="concession-map-card">
               {/* Header with Cartographic Metadata */}
               <div className="concession-map-header">

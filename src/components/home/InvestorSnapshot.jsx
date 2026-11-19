@@ -15,19 +15,21 @@ export default function InvestorSnapshot() {
         <div className="investor-grid-2col">
           {/* Left Column: Narrative, CTA & Official Capital Structure Ledger */}
           <div className="investor-narrative-col">
-            <Eyebrow text="Investor Relations" theme="dark" />
-            <h2 className="investor-heading">
-              <span className="investor-heading-accent">Capital Structure &</span><br />Investor Proposition
-            </h2>
-            <p className="investor-lede">
-              BluEnergies provides institutional and retail investors with leveraged exposure to frontier deepwater exploration in one of Africa&apos;s few remaining undrilled Cretaceous fan plays.
-            </p>
-            <p className="investor-desc">
-              With C$20.7 million in growth capital raised through an oversubscribed non-brokered private placement in July 2026, the company is fully funded to execute its share of the active 3D reprocessing and seabed survey programmes alongside operating partner TotalEnergies.
-            </p>
+            <div className={`motion-fade-up ${inView ? 'is-in-view' : ''}`}>
+              <Eyebrow text="Investor Relations" theme="dark" />
+              <h2 className="investor-heading">
+                <span className="investor-heading-accent">Capital Structure &</span><br />Investor Proposition
+              </h2>
+              <p className="investor-lede">
+                BluEnergies provides institutional and retail investors with leveraged exposure to frontier deepwater exploration in one of Africa&apos;s few remaining undrilled Cretaceous fan plays.
+              </p>
+              <p className="investor-desc">
+                With C$20.7 million in growth capital raised through an oversubscribed non-brokered private placement in July 2026, the company is fully funded to execute its share of the active 3D reprocessing and seabed survey programmes alongside operating partner TotalEnergies.
+              </p>
+            </div>
 
             {/* Official Capital Markets & Registrar Dossier (Human Agency Craft) */}
-            <div className="investor-ledger-box">
+            <div className={`investor-ledger-box motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
               <div className="investor-ledger-header">
                 <span className="ledger-box-tag">MARKET IDENTIFIERS</span>
                 <span className="ledger-box-sedar">SEDAR+ PROFILE: 00054231</span>
@@ -52,7 +54,7 @@ export default function InvestorSnapshot() {
               </div>
             </div>
 
-            <div className="investor-cta-wrap">
+            <div className={`investor-cta-wrap motion-fade-up stagger-2 ${inView ? 'is-in-view' : ''}`}>
               <Button href="/investors/outlook/" variant="primary">
                 Explore investor information &rarr;
               </Button>
@@ -62,7 +64,7 @@ export default function InvestorSnapshot() {
           {/* Right Column: Market & Filings Summary */}
           <div className="investor-panel-col">
             {/* Top Ticker Cards (TSXV: BLU & OTCQX: BLUGF) */}
-            <div className="investor-tickers-grid">
+            <div className={`investor-tickers-grid motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
               {/* Card 1: Primary Exchange */}
               <div className="investor-exchange-card investor-card-tsxv">
                 <div className="investor-exchange-content">
@@ -83,7 +85,7 @@ export default function InvestorSnapshot() {
             </div>
 
             {/* Middle Card: Recent Financing Milestone */}
-            <div className="investor-milestone-card">
+            <div className={`investor-milestone-card motion-fade-up stagger-2 ${inView ? 'is-in-view' : ''}`}>
               <div className="investor-milestone-icon-wrap" aria-hidden="true">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <ellipse cx="12" cy="5" rx="8" ry="3"/>
@@ -105,7 +107,7 @@ export default function InvestorSnapshot() {
             </div>
 
             {/* Bottom 3 Action Cards with Concrete Formats & Document Sizes */}
-            <div className="investor-actions-grid">
+            <div className={`investor-actions-grid motion-fade-up stagger-3 ${inView ? 'is-in-view' : ''}`}>
               <a href="/investors/presentations/" className="investor-action-tile">
                 <div className="action-tile-left">
                   <span className="action-tile-icon" aria-hidden="true">

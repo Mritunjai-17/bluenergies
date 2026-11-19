@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="container">
-        <div className="footer-grid">
+        <div className="footer-grid motion-fade-up">
           {/* Left Column: Identity & Corporate Details */}
           <div className="footer-brand">
             <Link href="/" aria-label="BluEnergies Ltd. Home">

@@ -25,7 +25,7 @@ export default function StrategicPartnership() {
   return (
     <Section background="white" id="strategic-partnership">
       <div className="editorial-grid" style={{ alignItems: 'center' }}>
-        <div>
+        <div className="motion-fade-up">
           <Eyebrow text="Strategic Partnership" theme="light" />
           <h2 style={{ fontSize: 'clamp(2rem, 3.4vw, 2.8rem)', lineHeight: 1.18, marginBottom: '1.25rem', color: 'var(--text-dark)' }}>
             Joint Exploration with TotalEnergies
@@ -46,7 +46,7 @@ export default function StrategicPartnership() {
         {/* Partnership Pillar Cards */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {pillars.map((p, idx) => (
-            <div key={idx} style={{ background: 'var(--soft-blue)', padding: '20px 24px', borderRadius: 'var(--radius-md)', border: '1px solid rgba(20, 43, 58, 0.08)', borderLeft: '3px solid var(--teal-primary)' }}>
+            <div key={idx} className={`motion-fade-up stagger-${idx + 1}`} style={{ background: 'var(--soft-blue)', padding: '20px 24px', borderRadius: 'var(--radius-md)', border: '1px solid rgba(20, 43, 58, 0.08)', borderLeft: '3px solid var(--teal-primary)' }}>
               <strong style={{ display: 'block', fontSize: '1rem', color: 'var(--dark-navy)', marginBottom: '6px' }}>
                 {p.title}
               </strong>

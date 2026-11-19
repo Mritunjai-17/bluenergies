@@ -8,7 +8,7 @@ export default function LeadershipIntro() {
 
   return (
     <Section background="white" id="leadership">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px', flexWrap: 'wrap', gap: '20px' }}>
+      <div className="motion-fade-up" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px', flexWrap: 'wrap', gap: '20px' }}>
         <div>
           <Eyebrow text="Leadership & Governance" theme="light" />
           <h2 style={{ fontSize: 'clamp(2rem, 3.4vw, 2.7rem)', lineHeight: 1.2, margin: 0, color: 'var(--text-dark)' }}>
@@ -24,8 +24,8 @@ export default function LeadershipIntro() {
       </div>
 
       <div className="leadership-cards-grid">
-        {leadershipPreview.map((member) => (
-          <div key={member.name} className="leadership-card">
+        {leadershipPreview.map((member, idx) => (
+          <div key={member.name} className={`leadership-card motion-fade-up stagger-${idx + 1}`}>
             <div className="leadership-card-initials" aria-hidden="true">
               {member.name.split(' ').map(n => n[0]).join('')}
             </div>

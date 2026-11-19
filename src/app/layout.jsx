@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import Nav from '../components/layout/Nav';
 import Footer from '../components/layout/Footer';
 import CookieNotice from '../components/layout/CookieNotice';
+import ScrollAnimationObserver from '../components/ui/ScrollAnimationObserver';
 import { site } from '../data/site.ts';
 
 export const metadata = {
@@ -48,6 +49,7 @@ export default function RootLayout({ children }) {
         </main>
         <Footer />
         <CookieNotice />
+        <ScrollAnimationObserver />
       </body>
     </html>
   );

@@ -50,7 +50,7 @@ export default function ExplorationPotential() {
         {/* Two-Column Technical Geological Presentation */}
         <div className="geological-editorial-grid">
           {/* Left Column: Mechanics & Petroleum System */}
-          <div className="geological-narrative-col">
+          <div className={`geological-narrative-col motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
             <h3 className="geological-subheading">
               Geological Mechanics &amp;<br />Petroleum System
             </h3>
@@ -81,7 +81,7 @@ export default function ExplorationPotential() {
           </div>
 
           {/* Right Column: High-Fidelity Geological Cross-Section Visual */}
-          <div className="geological-visual-col">
+          <div className={`geological-visual-col motion-fade-up stagger-2 ${inView ? 'is-in-view' : ''}`}>
             <div className="geological-diagram-card">
               <div className="geological-svg-wrapper">
                 <svg
@@ -319,7 +319,7 @@ export default function ExplorationPotential() {
         </div>
 
         {/* Human-Crafted Editorial Feature: Expert Insight Panel */}
-        <div className={`expert-insight-panel motion-fade-up ${inView ? 'is-in-view' : ''}`}>
+        <div className={`expert-insight-panel motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
           <div className="insight-badge-cell">
             <span className="insight-tag">EXPERT INSIGHT</span>
           </div>
@@ -347,7 +347,7 @@ export default function ExplorationPotential() {
 
           <div className="benchmarks-grid">
             {analogues.map((item, idx) => (
-              <div key={idx} className="benchmark-card">
+              <div key={idx} className={`benchmark-card motion-fade-up stagger-${idx + 1} ${inView ? 'is-in-view' : ''}`}>
                 <h4 className="benchmark-name">{item.name}</h4>
                 <div className="benchmark-basin">{item.basin}</div>
                 <div className="benchmark-resource-pill">
@@ -361,7 +361,7 @@ export default function ExplorationPotential() {
         </div>
 
         {/* Mandatory Regulatory Disclosure Bar (NI 51-101 Compliant) */}
-        <div className={`regulatory-bar motion-fade-up ${inView ? 'is-in-view' : ''}`}>
+        <div className={`regulatory-bar motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
           <div className="regulatory-bar-accent" aria-hidden="true"></div>
           <div className="regulatory-bar-label">
             REGULATORY DISCLOSURE (TSX.V: BLU)

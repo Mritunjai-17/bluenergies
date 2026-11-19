@@ -49,23 +49,27 @@ export default function CompanyOverview() {
         <div className="overview-grid">
           {/* Left Column: Narrative Content */}
           <div className="overview-col-narrative">
-            <Eyebrow text="Company Overview" theme="light" />
+            <div className="motion-fade-up">
+              <Eyebrow text="Company Overview" theme="light" />
 
-            <h2 className="overview-heading">
-              Focused on High-Potential<br className="overview-heading-br" /> Deepwater Exploration
-            </h2>
+              <h2 className="overview-heading">
+                Focused on High-Potential<br className="overview-heading-br" /> Deepwater Exploration
+              </h2>
 
-            <div className="overview-accent-line" aria-hidden="true"></div>
+              <div className="overview-accent-line" aria-hidden="true"></div>
+            </div>
 
-            <p className="overview-lede">
-              BluEnergies Ltd. is a publicly traded Canadian energy company (TSXV: BLU | OTCQX: BLUGF) dedicated to unlocking high-impact frontier oil and gas plays across the West African continental margin.
-            </p>
+            <div className="motion-fade-up stagger-1">
+              <p className="overview-lede">
+                BluEnergies Ltd. is a publicly traded Canadian energy company (TSXV: BLU | OTCQX: BLUGF) dedicated to unlocking high-impact frontier oil and gas plays across the West African continental margin.
+              </p>
 
-            <p className="overview-body">
-              Rather than accumulating a scattered, capital-dilutive acreage portfolio, BluEnergies concentrates technical resources and balance sheet focus on the under-explored Harper Basin, offshore southern Liberia. Through Reconnaissance Licence RL-003, the company partners with global energy supermajor TotalEnergies to systematically de-risk multi-billion-barrel prospective resource targets across 8,924 km² of undrilled Cretaceous turbidite fan complexes.
-            </p>
+              <p className="overview-body">
+                Rather than accumulating a scattered, capital-dilutive acreage portfolio, BluEnergies concentrates technical resources and balance sheet focus on the under-explored Harper Basin, offshore southern Liberia. Through Reconnaissance Licence RL-003, the company partners with global energy supermajor TotalEnergies to systematically de-risk multi-billion-barrel prospective resource targets across 8,924 km² of undrilled Cretaceous turbidite fan complexes.
+              </p>
+            </div>
 
-            <div className="overview-cta">
+            <div className="overview-cta motion-fade-up stagger-2">
               <Button href="/corporate/about-us/" variant="primary" className="overview-btn">
                 <span>Learn more about us</span>
                 <svg className="overview-btn-arrow" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -77,7 +81,7 @@ export default function CompanyOverview() {
 
           {/* Right Column: Premium Dark Navy Corporate Mandate & Profile Card */}
           <div className="overview-col-card">
-            <div className="overview-card">
+            <div className="overview-card motion-fade-up stagger-1">
               <div className="overview-card-header">
                 <div className="overview-card-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">

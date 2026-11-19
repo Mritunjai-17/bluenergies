@@ -72,7 +72,7 @@ export default function FinalInvestorCTA() {
 
       <div className="container final-cta-container">
         {/* Editorial Left-Aligned Header Block */}
-        <div className="final-cta-header">
+        <div className="final-cta-header motion-fade-up">
           <Eyebrow text="Connect & Follow" theme="light" className="final-cta-eyebrow" />
           <h2 className="final-cta-heading">
             Follow Our Progress in<br />Deepwater Exploration
@@ -93,7 +93,7 @@ export default function FinalInvestorCTA() {
         </div>
 
         {/* Horizontal Subscription Box (Soft Icy Tint) */}
-        <div className="cta-newsletter-card">
+        <div className="cta-newsletter-card motion-fade-up stagger-1">
           <div className="cta-newsletter-grid">
             {/* Left Column: Icon + Title & Description */}
             <div className="cta-newsletter-left">
@@ -166,7 +166,7 @@ export default function FinalInvestorCTA() {
         </div>
 
         {/* Bottom Contact Information Row */}
-        <div className="cta-contact-row">
+        <div className="cta-contact-row motion-fade-up stagger-2">
           {/* Headquarters */}
           <div className="cta-contact-item">
             <div className="cta-contact-icon" aria-hidden="true">

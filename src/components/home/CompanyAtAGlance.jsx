@@ -42,9 +42,9 @@ export default function CompanyAtAGlance() {
         </div>
 
         {/* Human-Crafted Swiss Architectural Data Ledger (Replacing generic card boxes) */}
-        <div className={`technical-ledger-board motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
+        <div className={`technical-ledger-board ${inView ? 'is-in-view' : ''}`}>
           {/* Row 1: Operating Equity Balance (35% BluEnergies / 65% TotalEnergies) */}
-          <div className="ledger-row ledger-row-equity">
+          <div className="ledger-row ledger-row-equity motion-fade-up stagger-1">
             <div className="ledger-col-meta">
               <span className="ledger-index">01 / COMMERCIAL STRUCTURE</span>
               <h3 className="ledger-row-title">Operating Equity &amp; Participating Interest</h3>
@@ -88,7 +88,7 @@ export default function CompanyAtAGlance() {
           </div>
 
           {/* Row 2: Concession Scale & Acreage Depth */}
-          <div className="ledger-row ledger-row-scale">
+          <div className="ledger-row ledger-row-scale motion-fade-up stagger-2">
             <div className="ledger-col-meta">
               <span className="ledger-index">02 / CONCESSION FOOTPRINT</span>
               <h3 className="ledger-row-title">Gross Exploration Acreage</h3>
@@ -111,7 +111,7 @@ export default function CompanyAtAGlance() {
           </div>
 
           {/* Row 3: Subsurface Exploration Assets (3-Column Technical Rail) */}
-          <div className="ledger-row ledger-row-assets">
+          <div className="ledger-row ledger-row-assets motion-fade-up stagger-3">
             {/* Asset Col 1: 3 Offshore Blocks */}
             <div className="ledger-asset-card">
               <div className="ledger-asset-header">

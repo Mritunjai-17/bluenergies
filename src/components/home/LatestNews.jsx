@@ -15,7 +15,7 @@ export default function LatestNews() {
     <div ref={sectionRef}>
       <Section background="warm-white" id="latest-news" className="news-section">
       {/* 1. Editorial Header Row */}
-      <div className="news-header">
+      <div className={`news-header motion-fade-up ${inView ? 'is-in-view' : ''}`}>
         <div className="news-header-left">
           <Eyebrow text="NEWS & DISCLOSURES" theme="light" className="news-eyebrow" />
           <h2 className="news-title">

@@ -4,9 +4,9 @@ import { useState, useEffect, useRef } from 'react';
 
 /**
  * Hook to detect when an element enters the viewport.
- * Automatically checks prefers-reduced-motion.
+ * Automatically checks prefers-reduced-motion and triggers immediately if above fold.
  */
-export function useInView(options = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }) {
+export function useInView(options = {}) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
 
@@ -14,21 +14,36 @@ export function useInView(options = { threshold: 0.15, rootMargin: '0px 0px -40p
     // If user prefers reduced motion, trigger immediately
     if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setInView(true);
+      if (ref.current) ref.current.classList.add('is-in-view');
       return;
     }
 
     if (!ref.current) return;
 
+    // Check if element is already within viewport on mount
+    const rect = ref.current.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setInView(true);
+      ref.current.classList.add('is-in-view');
+      return;
+    }
+
+    const observerOptions = {
+      threshold: options.threshold !== undefined ? options.threshold : 0.08,
+      rootMargin: options.rootMargin || '0px 0px -40px 0px'
+    };
+
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setInView(true);
+        entry.target.classList.add('is-in-view');
         observer.unobserve(entry.target);
       }
-    }, options);
+    }, observerOptions);
 
     observer.observe(ref.current);
     return () => observer.disconnect();
-  }, []);
+  }, [options.threshold, options.rootMargin]);
 
   return [ref, inView];
 }

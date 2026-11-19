@@ -157,7 +157,7 @@ export default function WorkProgramme() {
         </div>
 
         {/* Campaign Operational Ledger Ribbon (Human Agency Craft) */}
-        <div className="programme-campaign-ribbon">
+        <div className={`programme-campaign-ribbon motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
           <div className="campaign-ribbon-item">
             <span className="ribbon-key">EXPLORATION CAMPAIGN</span>
             <span className="ribbon-val">Phase 1: Subsurface De-Risking</span>
