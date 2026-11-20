@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Eyebrow from '../../../components/ui/Eyebrow';
 import Button from '../../../components/ui/Button';
-import CorporateVideoFeature from '../../../components/corporate/CorporateVideoFeature';
+import CorporateHeroVideo from '../../../components/corporate/CorporateHeroVideo';
 import { news } from '../../../data/news.ts';
 import { site } from '../../../data/site.ts';
 
@@ -17,7 +17,8 @@ export default function AboutUsPage() {
   return (
     <>
       {/* =========================================================
-         1. CORPORATE HERO & INTRODUCTION (EDITORIAL 2-COLUMN)
+         1. CORPORATE HERO & INTRODUCTION (HUMAN EDITORIAL ARCHITECTURE)
+         One Strong Heading • One Compelling Visual • One Clear Action Group • One Restrained Info Strip
          ========================================================= */}
       <section className="corp-hero-section" aria-label="Corporate Overview">
         {/* Subtle, Quiet Bathymetric Contour Linework (Perimeter Depth Only) */}
@@ -41,184 +42,89 @@ export default function AboutUsPage() {
         </div>
 
         <div className="container">
-          <div className="corp-intro-grid">
-            {/* Left Column: Refined Editorial Introduction */}
-            <div className="corp-intro-col-narrative motion-fade-up">
+          {/* Balanced 2-Column Hero Grid: Left Narrative (48%) / Right Cinematic Video (52%) */}
+          <div className="corp-hero-grid">
+            {/* LEFT COLUMN: Corporate Introduction */}
+            <div className="corp-hero-content motion-fade-up">
               <Eyebrow text="About BluEnergies" theme="dark" />
 
-              <h1 className="corp-intro-heading">
-                Frontier deepwater exploration<br className="corp-br-desktop" />
-                with operator scale and capital focus.
+              <h1 className="corp-hero-heading">
+                Pioneering Frontier Deepwater Exploration<br className="corp-br-desktop" /> along the Atlantic Margin
               </h1>
 
-              <div className="corp-intro-accent-bar" aria-hidden="true"></div>
+              <div className="corp-hero-accent-bar" aria-hidden="true"></div>
 
-              <p className="corp-intro-lede">
+              <p className="corp-hero-lede">
                 BluEnergies Ltd. is a publicly traded Canadian natural resource explorer (TSXV: BLU | OTCQX: BLUGF) dedicated to capturing and de-risking high-impact Cretaceous basin floor fan systems along the Atlantic Margin.
               </p>
 
-              <div className="corp-intro-supporting">
+              <div className="corp-hero-positioning">
                 <p>
                   Rather than assembling a broad, capital-dilutive portfolio of disparate minor concessions, BluEnergies concentrates 100% of technical firepower, balance sheet focus, and management discipline on the under-explored Harper Basin, offshore southern Liberia. Through Reconnaissance Licence RL-003, we partner with global energy supermajor TotalEnergies (65% operator) to systematically mature multi-billion-barrel prospective resource targets across 8,924 km² of undrilled deepwater fairway.
                 </p>
               </div>
 
-              <div className="corp-intro-cta">
+              <div className="corp-hero-cta">
                 <Button href="/assets-and-operations/overview/" variant="primary">
                   Explore our assets &amp; operations &rarr;
                 </Button>
-                <Button href="/resources/presentations/corporate-presentation.pdf" variant="secondary" theme="dark" target="_blank" rel="noopener noreferrer">
+                <Button
+                  href="/resources/presentations/corporate-presentation.pdf"
+                  variant="secondary"
+                  theme="dark"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Download corporate presentation
                 </Button>
               </div>
             </div>
 
-            {/* Right Column: Editorial Corporate Dossier (Enhanced Human Craftsmanship) */}
-            <div className="corp-intro-col-panel motion-fade-up stagger-1">
-              <aside className="corp-dossier" aria-label="Corporate Fact Sheet">
-                {/* Official Register Topbar */}
-                <div className="corp-dossier-topbar">
-                  <span className="corp-dossier-kicker">Official Corporate Register</span>
-                  <span className="corp-dossier-doc-id">TSX-V / OTCQX Listed Explorer</span>
+            {/* RIGHT COLUMN: Cinematic Technical Exploration Visual */}
+            <div className="corp-hero-visual-col motion-fade-up stagger-1">
+              <CorporateHeroVideo />
+            </div>
+          </div>
+
+          {/* BORDERLESS / HAIRLINE CORPORATE INFORMATION STRIP DIRECTLY BENEATH HERO */}
+          <div className="corp-info-strip motion-fade-up stagger-2" role="region" aria-label="Essential Corporate Metrics">
+            <div className="corp-info-item">
+              <span className="corp-info-kicker">PRIMARY LISTING</span>
+              <div className="corp-info-val-wrap">
+                <div className="corp-info-val">
+                  TSX Venture: <span className="corp-info-symbol">BLU</span>
                 </div>
+                <div className="corp-info-sub">OTCQX: BLUGF &bull; TSXV Tier 2 Explorer</div>
+              </div>
+            </div>
 
-                {/* Dossier Header & Tickers */}
-                <div className="corp-dossier-header">
-                  <div className="corp-dossier-identity">
-                    <h2 className="corp-dossier-title">Corporate Fact Sheet</h2>
-                    <span className="corp-dossier-subtitle">Atlantic Margin Frontier Exploration</span>
-                  </div>
-                  <div className="corp-dossier-badges">
-                    <span className="corp-ticker-pill is-active">
-                      <span className="corp-ticker-dot" aria-hidden="true"></span>
-                      TSXV: BLU
-                    </span>
-                    <span className="corp-ticker-pill">OTCQX: BLUGF</span>
-                  </div>
+            <div className="corp-info-divider" aria-hidden="true"></div>
+
+            <div className="corp-info-item">
+              <span className="corp-info-kicker">CONCESSION FOOTPRINT</span>
+              <div className="corp-info-val-wrap">
+                <div className="corp-info-val">
+                  8,924 <span className="corp-info-unit">km²</span>
                 </div>
+                <div className="corp-info-sub">~2.2M Gross Acres &bull; Blocks LB-26, 30 &amp; 31</div>
+              </div>
+            </div>
 
-                {/* Section 1: Capital Structure & Domicile with Dotted Leaders */}
-                <div className="corp-dossier-section">
-                  <div className="corp-dossier-section-header">
-                    <span className="corp-dossier-section-heading">Market Listings &amp; Corporate Seat</span>
-                  </div>
-                  <dl className="corp-dossier-list">
-                    <div className="corp-dossier-row">
-                      <dt className="corp-dossier-label">Primary Exchange</dt>
-                      <span className="corp-dossier-leader" aria-hidden="true"></span>
-                      <dd className="corp-dossier-value highlight">TSX Venture (TSXV: BLU)</dd>
-                    </div>
-                    <div className="corp-dossier-row">
-                      <dt className="corp-dossier-label">US OTC Quotation</dt>
-                      <span className="corp-dossier-leader" aria-hidden="true"></span>
-                      <dd className="corp-dossier-value">OTCQX Best Market (OTCQX: BLUGF)</dd>
-                    </div>
-                    <div className="corp-dossier-row">
-                      <dt className="corp-dossier-label">Corporate Domicile</dt>
-                      <span className="corp-dossier-leader" aria-hidden="true"></span>
-                      <dd className="corp-dossier-value">Vancouver, BC, Canada (Est. 2020)</dd>
-                    </div>
-                  </dl>
-                </div>
+            <div className="corp-info-divider" aria-hidden="true"></div>
 
-                {/* Section 2: Flagship Concession Feature with 65/35 Joint Venture Bar */}
-                <div className="corp-dossier-section">
-                  <div className="corp-dossier-section-header">
-                    <span className="corp-dossier-section-heading">Core Exploration Concession</span>
-                    <span className="corp-dossier-licence-tag">Reconnaissance Licence RL-003</span>
-                  </div>
-
-                  <div className="corp-dossier-asset-spotlight">
-                    <div className="corp-dossier-asset-main">
-                      <div className="corp-dossier-asset-meta">
-                        <span className="corp-dossier-asset-kicker">Atlantic Margin Fairway</span>
-                        <div className="corp-dossier-asset-name">Harper Basin Deepwater</div>
-                        <div className="corp-dossier-asset-sub">Offshore Liberia &bull; Blocks LB-26, LB-30 &amp; LB-31</div>
-                      </div>
-                      <div className="corp-dossier-asset-metric">
-                        <div className="corp-dossier-asset-number">
-                          8,924 <span className="corp-dossier-asset-unit">km²</span>
-                        </div>
-                        <div className="corp-dossier-asset-desc">~2.2M Gross Acres</div>
-                      </div>
-                    </div>
-
-                    {/* Joint Venture Partnership Visual Ratio Bar */}
-                    <div className="corp-jv-split">
-                      <div className="corp-jv-split-header">
-                        <span className="corp-jv-label">Operating Joint Venture</span>
-                        <span className="corp-jv-terms">Carried Exploration</span>
-                      </div>
-                      <div className="corp-jv-bar" role="img" aria-label="Joint venture ownership: TotalEnergies 65% Operator, BluEnergies 35% Interest">
-                        <div className="corp-jv-seg is-operator" style={{ width: '65%' }}>
-                          <span className="corp-jv-seg-text">TotalEnergies &bull; 65% (Operator)</span>
-                        </div>
-                        <div className="corp-jv-seg is-partner" style={{ width: '35%' }}>
-                          <span className="corp-jv-seg-text">BluEnergies &bull; 35%</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Section 3: Commercial Framework & Operating Terms with Dotted Leaders */}
-                <div className="corp-dossier-section">
-                  <div className="corp-dossier-section-header">
-                    <span className="corp-dossier-section-heading">Commercial Framework &amp; Fiscal Terms</span>
-                  </div>
-                  <dl className="corp-dossier-list">
-                    <div className="corp-dossier-row">
-                      <dt className="corp-dossier-label">Operating Partner</dt>
-                      <span className="corp-dossier-leader" aria-hidden="true"></span>
-                      <dd className="corp-dossier-value emphasis">TotalEnergies (Global Supermajor)</dd>
-                    </div>
-                    <div className="corp-dossier-row">
-                      <dt className="corp-dossier-label">Working Interest</dt>
-                      <span className="corp-dossier-leader" aria-hidden="true"></span>
-                      <dd className="corp-dossier-value">BluEnergies Ltd. (35% Carried)</dd>
-                    </div>
-                    <div className="corp-dossier-row">
-                      <dt className="corp-dossier-label">Expenditure Status</dt>
-                      <span className="corp-dossier-leader" aria-hidden="true"></span>
-                      <dd className="corp-dossier-value highlight">100% Cost-Recoverable (LPRA)</dd>
-                    </div>
-                  </dl>
-                </div>
-
-                {/* Institutional Governance & Direct Investor Link */}
-                <div className="corp-dossier-footer">
-                  <div className="corp-dossier-gov-group">
-                    <div className="corp-dossier-gov-item">
-                      <span className="corp-dossier-gov-label">Auditor</span>
-                      <span className="corp-dossier-gov-value">KPMG LLP</span>
-                    </div>
-                    <span className="corp-dossier-gov-divider" aria-hidden="true">&bull;</span>
-                    <div className="corp-dossier-gov-item">
-                      <span className="corp-dossier-gov-label">Transfer Agent</span>
-                      <span className="corp-dossier-gov-value">Computershare</span>
-                    </div>
-                  </div>
-                  <Link href="/investors/stock-information/" className="corp-dossier-action-link">
-                    <span>Stock info &rarr;</span>
-                  </Link>
-                </div>
-              </aside>
+            <div className="corp-info-item">
+              <span className="corp-info-kicker">OPERATING PARTNER</span>
+              <div className="corp-info-val-wrap">
+                <div className="corp-info-val">TotalEnergies</div>
+                <div className="corp-info-sub">65% Operator &bull; BluEnergies 35% Carried</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* =========================================================
-         2. CORPORATE VISUAL FEATURE (INTERACTIVE EDITORIAL MEDIA)
-         ========================================================= */}
-      <section className="corp-media-section" aria-label="Corporate Media Feature">
-        <div className="container">
-          <CorporateVideoFeature />
-        </div>
-      </section>
-
-      {/* =========================================================
-         3. STRATEGIC FOCUS & EXPLORATION MANDATE
+         2. STRATEGIC FOCUS & EXPLORATION MANDATE
          ========================================================= */}
       <section className="corp-strategy-section" aria-label="Corporate Strategy">
         <div className="container">
@@ -289,6 +195,113 @@ export default function AboutUsPage() {
                   <span className="corp-geo-label">Mapped High-Amplitude Turbidite Fan Targets</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+         3. INSTITUTIONAL CORPORATE SPECIFICATIONS & STATUTORY PROFILE
+         Preserves all factual data from previous fact sheet in a clean, human-designed institutional ledger
+         ========================================================= */}
+      <section className="corp-spec-section" aria-label="Corporate Profile & Statutory Specifications">
+        <div className="container">
+          <div className="corp-spec-header-row motion-fade-up">
+            <div>
+              <Eyebrow text="Corporate Directory" theme="dark" />
+              <h2 className="corp-section-heading" style={{ color: '#FFFFFF', marginBottom: '8px' }}>
+                Corporate Profile &amp; Statutory Specifications
+              </h2>
+              <p className="corp-section-lede" style={{ color: 'rgba(220, 235, 245, 0.72)', maxWidth: '62ch' }}>
+                Verified regulatory filings, market tickers, auditor mandates, and commercial operating frameworks for institutional investors and analysts.
+              </p>
+            </div>
+            <div className="corp-spec-header-action">
+              <Button href="/investors/stock-information/" variant="secondary" theme="dark">
+                View stock information &rarr;
+              </Button>
+            </div>
+          </div>
+
+          <div className="corp-spec-ledger-grid motion-fade-up stagger-1">
+            {/* Column 1: Market Listings & Corporate Seat */}
+            <div className="corp-spec-panel">
+              <div className="corp-spec-panel-header">
+                <span className="corp-spec-panel-index">01</span>
+                <h3 className="corp-spec-panel-title">Capital Structure &amp; Domicile</h3>
+              </div>
+              <dl className="corp-spec-table">
+                <div className="corp-spec-row">
+                  <dt className="corp-spec-term">Corporate Domicile</dt>
+                  <span className="corp-spec-dotted-leader" aria-hidden="true"></span>
+                  <dd className="corp-spec-def">Vancouver, BC, Canada</dd>
+                </div>
+                <div className="corp-spec-row">
+                  <dt className="corp-spec-term">Founding Year</dt>
+                  <span className="corp-spec-dotted-leader" aria-hidden="true"></span>
+                  <dd className="corp-spec-def">2020</dd>
+                </div>
+                <div className="corp-spec-row">
+                  <dt className="corp-spec-term">Primary Exchange</dt>
+                  <span className="corp-spec-dotted-leader" aria-hidden="true"></span>
+                  <dd className="corp-spec-def highlight">TSX Venture (TSXV: BLU)</dd>
+                </div>
+                <div className="corp-spec-row">
+                  <dt className="corp-spec-term">US OTC Quotation</dt>
+                  <span className="corp-spec-dotted-leader" aria-hidden="true"></span>
+                  <dd className="corp-spec-def">OTCQX Best Market (OTCQX: BLUGF)</dd>
+                </div>
+                <div className="corp-spec-row">
+                  <dt className="corp-spec-term">Independent Auditor</dt>
+                  <span className="corp-spec-dotted-leader" aria-hidden="true"></span>
+                  <dd className="corp-spec-def">KPMG LLP</dd>
+                </div>
+                <div className="corp-spec-row">
+                  <dt className="corp-spec-term">Registrar &amp; Transfer Agent</dt>
+                  <span className="corp-spec-dotted-leader" aria-hidden="true"></span>
+                  <dd className="corp-spec-def">Computershare Investor Services Inc.</dd>
+                </div>
+              </dl>
+            </div>
+
+            {/* Column 2: Flagship Concession & Operating Consortium */}
+            <div className="corp-spec-panel">
+              <div className="corp-spec-panel-header">
+                <span className="corp-spec-panel-index">02</span>
+                <h3 className="corp-spec-panel-title">Concession Framework &amp; Joint Venture</h3>
+              </div>
+              <dl className="corp-spec-table">
+                <div className="corp-spec-row">
+                  <dt className="corp-spec-term">Flagship Concession</dt>
+                  <span className="corp-spec-dotted-leader" aria-hidden="true"></span>
+                  <dd className="corp-spec-def highlight">Harper Basin (RL-003)</dd>
+                </div>
+                <div className="corp-spec-row">
+                  <dt className="corp-spec-term">Exploration Blocks</dt>
+                  <span className="corp-spec-dotted-leader" aria-hidden="true"></span>
+                  <dd className="corp-spec-def">Blocks LB-26, LB-30 &amp; LB-31</dd>
+                </div>
+                <div className="corp-spec-row">
+                  <dt className="corp-spec-term">Gross Acreage</dt>
+                  <span className="corp-spec-dotted-leader" aria-hidden="true"></span>
+                  <dd className="corp-spec-def">8,924 km² (~2.2M Gross Acres)</dd>
+                </div>
+                <div className="corp-spec-row">
+                  <dt className="corp-spec-term">Operating Partner</dt>
+                  <span className="corp-spec-dotted-leader" aria-hidden="true"></span>
+                  <dd className="corp-spec-def">TotalEnergies (65% Operating Interest)</dd>
+                </div>
+                <div className="corp-spec-row">
+                  <dt className="corp-spec-term">Working Interest</dt>
+                  <span className="corp-spec-dotted-leader" aria-hidden="true"></span>
+                  <dd className="corp-spec-def">BluEnergies Ltd. (35% Carried Interest)</dd>
+                </div>
+                <div className="corp-spec-row">
+                  <dt className="corp-spec-term">Fiscal Status</dt>
+                  <span className="corp-spec-dotted-leader" aria-hidden="true"></span>
+                  <dd className="corp-spec-def highlight">100% Eligible Cost-Recoverable (LPRA)</dd>
+                </div>
+              </dl>
             </div>
           </div>
         </div>

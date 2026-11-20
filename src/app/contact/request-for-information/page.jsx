@@ -1,237 +1,113 @@
-'use client';
+import Eyebrow from '../../../components/ui/Eyebrow';
+import SubnavTabs from '../../../components/ui/SubnavTabs';
+import ContactInquiryForm from '../../../components/contact/ContactInquiryForm';
 
-import { useState } from 'react';
-import PageHero from '../../../components/ui/PageHero';
-import Section from '../../../components/ui/Section';
-import Button from '../../../components/ui/Button';
+export const metadata = {
+  title: 'Request for Information | Investor & Analyst Inquiries | BluEnergies Ltd.',
+  description: 'Submit an official information request or investor inquiry to BluEnergies Ltd. executive management and exploration leadership.'
+};
 
 export default function RequestForInformationPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    organisation: '',
-    message: '',
-    consent: false
-  });
-
-  const [errors, setErrors] = useState({});
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState({ type: '', message: '' });
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT || '';
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setErrors({});
-    setStatus({ type: '', message: '' });
-
-    const newErrors = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = 'Please provide your name.';
-    }
-
-    if (!formData.email.trim() || !emailRegex.test(formData.email.trim())) {
-      newErrors.email = 'Enter a valid email address.';
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = 'Please provide your inquiry details.';
-    }
-
-    if (!formData.consent) {
-      newErrors.consent = 'Consent is required to submit.';
-    }
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
-    if (!endpoint) {
-      setStatus({
-        type: 'error',
-        message: 'The form submission endpoint (FORM_ENDPOINT) has not been configured in the environment. Please reach out directly to info@blu-energies.com.'
-      });
-      return;
-    }
-
-    setLoading(true);
-
-    try {
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-
-      if (res.ok) {
-        setStatus({
-          type: 'success',
-          message: 'Thank you. Your request for information has been sent successfully.'
-        });
-        setFormData({
-          name: '',
-          email: '',
-          organisation: '',
-          message: '',
-          consent: false
-        });
-      } else {
-        throw new Error('Server returned non-200');
-      }
-    } catch (err) {
-      setStatus({
-        type: 'error',
-        message: 'An error occurred while submitting your request. Please email us at info@blu-energies.com directly.'
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
+  const contactTabs = [
+    { label: 'Corporate Offices & Directory', href: '/contact/contact-details/' },
+    { label: 'Request for Information Form', href: '/contact/request-for-information/' }
+  ];
 
   return (
-    <>
-      <PageHero
-        eyebrow="Contact"
-        title="Request for Information"
-        lede="Submit institutional queries, analyst requests, or operational information requests to BluEnergies corporate management."
-      />
+    <div className="page-light-wrapper">
+      {/* =========================================================
+         1. REQUEST HERO & SUBNAV (WARM IVORY TONE)
+         ========================================================= */}
+      <section className="contact-hero-section tone-ivory" aria-label="Request Information Hero">
+        <div className="container">
+          <SubnavTabs items={contactTabs} activeHref="/contact/request-for-information/" theme="light" ariaLabel="Contact Sections" />
 
-      <Section background="paper">
-        <div style={{ maxWidth: '1040px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Investor & Industry Inquiry</h2>
-          <p className="lede" style={{ color: 'var(--muted)', marginBottom: '2.5rem' }}>
-            Complete the form below to connect with our corporate office. All requests are routed to management for review.
-          </p>
-
-          <form id="contact-form" className="contact-form" onSubmit={handleSubmit} noValidate>
-            <div className="contact-form-grid">
-              {/* Name */}
-              <div className="form-group">
-                <label htmlFor="contact-name" className="form-label">Full Name *</label>
-                <input
-                  type="text"
-                  id="contact-name"
-                  name="name"
-                  className="form-input"
-                  placeholder="Your full name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                />
-                {errors.name && (
-                  <span className="field-error" style={{ color: '#c92a2a', fontSize: '0.82rem' }}>
-                    {errors.name}
-                  </span>
-                )}
-              </div>
-
-              {/* Email */}
-              <div className="form-group">
-                <label htmlFor="contact-email" className="form-label">Email Address *</label>
-                <input
-                  type="email"
-                  id="contact-email"
-                  name="email"
-                  className="form-input"
-                  placeholder="name@company.com"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                />
-                {errors.email && (
-                  <span className="field-error" style={{ color: '#c92a2a', fontSize: '0.82rem' }}>
-                    {errors.email}
-                  </span>
-                )}
-              </div>
-
-              {/* Organisation */}
-              <div className="form-group form-group-full">
-                <label htmlFor="contact-org" className="form-label">Organisation / Firm</label>
-                <input
-                  type="text"
-                  id="contact-org"
-                  name="organisation"
-                  className="form-input"
-                  placeholder="Company, institutional fund, or media outlet"
-                  value={formData.organisation}
-                  onChange={(e) => setFormData({ ...formData, organisation: e.target.value })}
-                />
-              </div>
-
-              {/* Message */}
-              <div className="form-group form-group-full">
-                <label htmlFor="contact-message" className="form-label">Message / Details of Request *</label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  className="form-textarea"
-                  placeholder="Specify the information or presentation requested..."
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  required
-                ></textarea>
-                {errors.message && (
-                  <span className="field-error" style={{ color: '#c92a2a', fontSize: '0.82rem' }}>
-                    {errors.message}
-                  </span>
-                )}
-              </div>
-
-              {/* Consent */}
-              <div className="form-group form-group-full">
-                <label className="consent-label" htmlFor="contact-consent">
-                  <input
-                    type="checkbox"
-                    id="contact-consent"
-                    name="consent"
-                    className="consent-checkbox"
-                    checked={formData.consent}
-                    onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                    required
-                  />
-                  <span>
-                    I agree to the processing of my contact information by BluEnergies Ltd. for the purpose of answering this inquiry in accordance with applicable privacy legislation. *
-                  </span>
-                </label>
-                {errors.consent && (
-                  <span className="field-error" style={{ color: '#c92a2a', fontSize: '0.82rem', marginTop: '4px' }}>
-                    {errors.consent}
-                  </span>
-                )}
-              </div>
-            </div>
-
-            <div style={{ marginTop: '28px' }}>
-              <Button variant="primary" type="submit" disabled={loading}>
-                {loading ? 'Sending...' : 'Send request'}
-              </Button>
-            </div>
-
-            {/* Global Status Message */}
-            {status.message && (
-              <div
-                role="alert"
-                aria-live="polite"
-                style={{
-                  marginTop: '20px',
-                  padding: '14px 18px',
-                  borderRadius: 'var(--radius-sm)',
-                  fontSize: '0.92rem',
-                  background: status.type === 'error' ? 'rgba(201, 42, 42, 0.1)' : 'rgba(23, 128, 140, 0.1)',
-                  border: status.type === 'error' ? '1px solid #c92a2a' : '1px solid var(--deep-teal)',
-                  color: status.type === 'error' ? '#c92a2a' : 'var(--deep-teal)'
-                }}
-              >
-                {status.message}
-              </div>
-            )}
-          </form>
+          <div className="contact-hero-intro motion-fade-up">
+            <Eyebrow text="Information Requests" theme="light" />
+            <h1 className="contact-hero-title">
+              Request Corporate &amp; Technical Information
+            </h1>
+            <div className="inv-accent-bar" aria-hidden="true"></div>
+            <p className="contact-hero-lede">
+              Institutional investors, energy sector analysts, and media representatives may request specific exploration documentation, financial materials, and corporate briefings.
+            </p>
+          </div>
         </div>
-      </Section>
-    </>
+      </section>
+
+      {/* =========================================================
+         2. BALANCED 2-COLUMN EXPERIENCE (WARM IVORY TONE)
+         ========================================================= */}
+      <section className="contact-content-section tone-ivory" aria-label="Information Request Form and Guidelines">
+        <div className="container">
+          <div className="contact-split-grid motion-fade-up">
+            {/* Left Column: Guidelines & Direct Materials */}
+            <div className="contact-directory-panel">
+              <div className="contact-dir-block">
+                <span className="contact-dir-kicker">INQUIRY GUIDELINES</span>
+                <h2 className="contact-dir-heading">Analyst &amp; Institutional Protocol</h2>
+                <p className="contact-dir-text">
+                  To ensure a prompt response, please select the most relevant subject classification from the inquiry menu and indicate whether you are a registered shareholder, securities analyst, media representative, or potential commercial partner.
+                </p>
+              </div>
+
+              <div className="contact-dir-divider" aria-hidden="true"></div>
+
+              <div className="contact-dir-block">
+                <span className="contact-dir-kicker">INSTANT DOCUMENT DOWNLOADS</span>
+                <h3 className="contact-dir-subheading">Pre-Packaged Corporate Materials</h3>
+                <p className="contact-dir-text">
+                  For immediate access, the following core investor documents are available for direct digital download:
+                </p>
+                <div className="contact-quick-docs">
+                  <a
+                    href="/resources/presentations/corporate-presentation.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-quick-doc-link"
+                  >
+                    <span>Corporate Presentation (PDF &bull; 4.2 MB)</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                  <a
+                    href="/resources/factsheets/Blu-Energies-Fact-Sheet.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-quick-doc-link"
+                  >
+                    <span>Investor Fact Sheet (PDF &bull; 1.1 MB)</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                  <a
+                    href="/resources/reports/research-report.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-quick-doc-link"
+                  >
+                    <span>Independent Research Report (PDF &bull; 1.8 MB)</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className="contact-dir-divider" aria-hidden="true"></div>
+
+              <div className="contact-dir-block">
+                <span className="contact-dir-kicker">REGULATORY COMPLIANCE NOTE</span>
+                <h3 className="contact-dir-subheading">Selective Disclosure Policy</h3>
+                <p className="contact-dir-text" style={{ fontSize: '0.84rem', color: '#4A6372', lineHeight: '1.6' }}>
+                  BluEnergies adheres strictly to Canadian securities laws governing continuous disclosure and fair disclosure practices. All material exploration and financial information is disseminated simultaneously to the public via SEDAR+ and wire services before being addressed in private correspondence.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column: Clean White Form Card */}
+            <div className="contact-form-panel">
+              <ContactInquiryForm sourcePage="Request for Information" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

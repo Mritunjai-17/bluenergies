@@ -11,79 +11,115 @@ export default function ExplorationPotential() {
       name: 'Jubilee & TEN',
       basin: 'Tano Basin (Ghana)',
       resource: '~2.1 Billion BOE',
-      desc: 'Upper Cretaceous turbidite reservoirs in a transform margin setting.'
+      desc: 'Upper Cretaceous turbidite reservoirs in a conjugate transform margin setting.'
     },
     {
       name: 'Baleine & Calao',
       basin: "Côte d'Ivoire Offshore",
       resource: '~2.5 Billion BOE',
-      desc: 'Major deepwater Cretaceous fan systems within a similar depositional framework.'
+      desc: 'Major deepwater Cretaceous fan systems within a similar depositional and subsidence framework.'
     },
     {
       name: 'Venus & Graff',
       basin: 'Orange Basin (Namibia)',
       resource: '~4.0 Billion BOE',
-      desc: 'Aptian–Cretaceous turbidite systems analogous to West African fan plays.'
+      desc: 'Aptian–Cretaceous turbidite fan systems directly analogous to West African deepwater plays.'
     },
     {
       name: 'Liza & Stabroek',
       basin: 'Guyana–Suriname Basin',
       resource: '>11.0 Billion BOE',
-      desc: 'Regionally extensive, stacked Cretaceous turbidite complexes in a passive margin setting.'
+      desc: 'Stacked Cretaceous turbidite complexes along the South American conjugate passive margin.'
     }
   ];
 
   return (
     <section id="exploration-potential" ref={sectionRef} className="section section-dark-navy theme-dark exploration-section">
       <div className="container exploration-container">
-        {/* Section Header */}
+        {/* =========================================================
+           1. SECTION HEADER (REFINED EDITORIAL TYPOGRAPHY)
+           ========================================================= */}
         <div className={`exploration-header motion-fade-up ${inView ? 'is-in-view' : ''}`}>
-          <Eyebrow text="EXPLORATION POTENTIAL" theme="dark" />
+          <div className="exploration-kicker-row">
+            <span className="exploration-kicker">TECHNICAL EVALUATION &bull; BLOCKS LB-26, LB-30 &amp; LB-31</span>
+            <span className="exploration-survey-tag">3D SEISMIC REPROCESSING ACTIVE</span>
+          </div>
+
           <h2 className="exploration-heading">
             Cretaceous Basin Floor Fan Play
           </h2>
+
           <p className="exploration-lede">
-            Advanced 3D seismic interpretation across Blocks LB-26, LB-30 and LB-31 has mapped multiple high-amplitude Cretaceous turbidite fan systems with significant prospective hydrocarbon potential.
+            High-resolution 3D broadband seismic reprocessing across Reconnaissance Licence RL-003 has delineated multiple high-amplitude Cretaceous turbidite fan complexes with multi-billion-barrel prospective resource potential.
           </p>
         </div>
 
-        {/* Two-Column Technical Geological Presentation */}
+        {/* =========================================================
+           2. TWO-COLUMN GEOLOGICAL PRESENTATION (EDITORIAL BALANCED)
+           ========================================================= */}
         <div className="geological-editorial-grid">
-          {/* Left Column: Mechanics & Petroleum System */}
+          {/* Left Column: Geological Narrative & Unboxed Specifications */}
           <div className={`geological-narrative-col motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
-            <h3 className="geological-subheading">
-              Geological Mechanics &amp;<br />Petroleum System
-            </h3>
+            <div className="geological-narrative-head">
+              <span className="geological-chapter-tag">REGIONAL PETROLEUM SYSTEM</span>
+              <h3 className="geological-subheading">
+                Geological Mechanics &amp;<br className="geo-br-desktop" />Petroleum Architecture
+              </h3>
+            </div>
 
             <p className="geological-paragraph">
-              The Harper Basin represents a classic transform continental margin, where long-lived subsidence and sediment supply from the West African margin have created an effective deepwater turbidite fairway within the Cretaceous section.
+              The Harper Basin represents a classic transform continental margin, where long-lived subsidence and continuous sediment flux from the West African craton have established an optimal deepwater turbidite fairway throughout the Cretaceous sequence.
             </p>
 
             <p className="geological-paragraph">
-              Basin floor fan systems are interpreted to have been deposited by channelized and unconfined gravity flows, resulting in laterally extensive, stacked sandstone bodies with favourable thickness, porosity and permeability. These reservoirs are mapped in a basin setting with appropriate source, seal and trap elements, consistent with a working petroleum system.
+              Basin floor fan architectures are interpreted as channelized and unconfined gravity flows, yielding laterally continuous, stacked sandstone bodies with favourable reservoir net-to-gross, porosity, and permeability. These reservoirs are trapped in an ideal structural-stratigraphic configuration with prolific source rock charge and regional marine shale seal integrity.
             </p>
 
-            {/* Refined 3-Row Technical Parameter Table */}
-            <div className="geo-specs-box">
-              <div className="geo-specs-row">
-                <span className="geo-specs-label">PRIMARY RESERVOIR</span>
-                <span className="geo-specs-value">Upper Cretaceous Turbidite Sandstones</span>
+            {/* Refined Specification List (Borderless, Clean Hairlines) */}
+            <div className="geo-specs-editorial">
+              <div className="geo-specs-title-row">
+                <span className="geo-specs-kicker">STRATIGRAPHIC SPECIFICATIONS</span>
+                <span className="geo-specs-rule" aria-hidden="true"></span>
               </div>
-              <div className="geo-specs-row">
-                <span className="geo-specs-label">SOURCE ROCK</span>
-                <span className="geo-specs-value">Cretaceous–Turonian Marine Shales</span>
-              </div>
-              <div className="geo-specs-row">
-                <span className="geo-specs-label">REGIONAL SEAL</span>
-                <span className="geo-specs-value">Tertiary Pelagic Claystones &amp; Shales</span>
-              </div>
+
+              <dl className="geo-specs-list">
+                <div className="geo-spec-item">
+                  <dt className="geo-spec-term">Primary Reservoir</dt>
+                  <dd className="geo-spec-desc">Upper Cretaceous Turbidite Sandstones</dd>
+                </div>
+                <div className="geo-spec-item">
+                  <dt className="geo-spec-term">Source Rock</dt>
+                  <dd className="geo-spec-desc">Cretaceous–Turonian Marine Shales</dd>
+                </div>
+                <div className="geo-spec-item">
+                  <dt className="geo-spec-term">Regional Seal</dt>
+                  <dd className="geo-spec-desc">Tertiary Pelagic Claystones &amp; Shales</dd>
+                </div>
+                <div className="geo-spec-item">
+                  <dt className="geo-spec-term">Trapping Mechanism</dt>
+                  <dd className="geo-spec-desc">Stratigraphic Pinchout &amp; Fault Closures</dd>
+                </div>
+              </dl>
             </div>
           </div>
 
-          {/* Right Column: High-Fidelity Geological Cross-Section Visual */}
+          {/* Right Column: High-Fidelity Geological Cross-Section Diagram */}
           <div className={`geological-visual-col motion-fade-up stagger-2 ${inView ? 'is-in-view' : ''}`}>
-            <div className="geological-diagram-card">
-              <div className="geological-svg-wrapper">
+            <div className="geological-diagram-frame">
+              {/* Figure Header Bar (Scientific Paper Metadata) */}
+              <div className="geo-diagram-header">
+                <div className="geo-diagram-meta-left">
+                  <span className="geo-fig-id">FIG. 4.1</span>
+                  <span className="geo-fig-divider" aria-hidden="true">&bull;</span>
+                  <span className="geo-fig-title">Harper Basin Depositional Architecture &bull; Regional Dip Section</span>
+                </div>
+                <div className="geo-diagram-meta-right">
+                  <span className="geo-datum-tag">DATUM: MEAN SEA LEVEL (MSL)</span>
+                </div>
+              </div>
+
+              {/* The Technical Cross-Section Canvas */}
+              <div className="geo-svg-stage">
                 <svg
                   viewBox="0 0 880 410"
                   fill="none"
@@ -125,7 +161,7 @@ export default function ExplorationPotential() {
                     </linearGradient>
 
                     <clipPath id="diagramCanvasClip">
-                      <rect width="880" height="410" rx="8" />
+                      <rect width="880" height="410" rx="4" />
                     </clipPath>
                   </defs>
 
@@ -271,16 +307,16 @@ export default function ExplorationPotential() {
                 </svg>
               </div>
 
-              {/* Integrated Diagram Legend & Scale Bar */}
-              <div className="geological-diagram-footer">
-                <div className="geological-legend">
+              {/* Diagram Legend & Scale Bar (Unboxed, Figure Caption Flow) */}
+              <div className="geo-diagram-footer">
+                <div className="geo-diagram-legend">
                   <div className="geo-legend-item">
                     <span className="geo-swatch geo-sand" aria-hidden="true"></span>
                     <span>Turbidite Fan Sandstone (Reservoir)</span>
                   </div>
                   <div className="geo-legend-item">
                     <span className="geo-swatch geo-shale" aria-hidden="true"></span>
-                    <span>Deepwater Shale (Seal)</span>
+                    <span>Deepwater Marine Shale (Seal)</span>
                   </div>
                   <div className="geo-legend-item">
                     <span className="geo-swatch geo-slope" aria-hidden="true"></span>
@@ -288,19 +324,19 @@ export default function ExplorationPotential() {
                   </div>
                   <div className="geo-legend-item">
                     <span className="geo-swatch geo-basement" aria-hidden="true"></span>
-                    <span>Older Strata (Pre-Cretaceous)</span>
+                    <span>Pre-Cretaceous Basement</span>
                   </div>
                   <div className="geo-legend-item">
                     <span className="geo-swatch geo-fault" aria-hidden="true">
-                      <svg viewBox="0 0 20 6" width="20" height="6" fill="none">
-                        <line x1="0" y1="3" x2="20" y2="3" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="1.5" strokeDasharray="4 3" />
+                      <svg viewBox="0 0 18 4" width="18" height="4" fill="none">
+                        <line x1="0" y1="2" x2="18" y2="2" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="1.2" strokeDasharray="3 2" />
                       </svg>
                     </span>
-                    <span>Fault / Growth Fault</span>
+                    <span>Growth Fault</span>
                   </div>
                 </div>
 
-                <div className="geological-scale-bar">
+                <div className="geo-diagram-scale">
                   <div className="scale-marks">
                     <span>0</span>
                     <span>10</span>
@@ -318,58 +354,80 @@ export default function ExplorationPotential() {
           </div>
         </div>
 
-        {/* Human-Crafted Editorial Feature: Expert Insight Panel */}
-        <div className={`expert-insight-panel motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
-          <div className="insight-badge-cell">
-            <span className="insight-tag">EXPERT INSIGHT</span>
+        {/* =========================================================
+           3. EXPERT INSIGHT SECTION (AUTHENTIC RESEARCH PULL-QUOTE)
+           ========================================================= */}
+        <div className={`geological-insight-editorial motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
+          <div className="geo-insight-decor" aria-hidden="true">
+            <span className="geo-insight-quote-symbol">&ldquo;</span>
           </div>
-          <div className="insight-quote-cell">
-            <span className="insight-quote-icon" aria-hidden="true">&ldquo;</span>
-            <blockquote className="insight-quote-body">
+
+          <div className="geo-insight-content">
+            <div className="geo-insight-header">
+              <span className="geo-insight-badge">SUBSURFACE APPRAISAL</span>
+              <span className="geo-insight-sep" aria-hidden="true">&bull;</span>
+              <span className="geo-insight-meta">RL-003 Broadband 3D Interpretation</span>
+            </div>
+
+            <blockquote className="geo-insight-quote">
               Our broadband 3D seismic reprocessing across the RL-003 licence has fundamentally clarified the Upper Cretaceous channel–fan geometry, with amplitude anomalies and AVO Class II/III signatures directly comparable to proven multi-billion-barrel turbidite systems along the conjugate Atlantic margin.
             </blockquote>
-          </div>
-          <div className="insight-author-cell">
-            <div className="insight-author-name">Dr. Jonathan Miller</div>
-            <div className="insight-author-role">VP of Geoscience &amp; Subsurface Exploration, BluEnergies Ltd.</div>
+
+            <div className="geo-insight-attribution">
+              <span className="geo-insight-author-name">Dr. Jonathan Miller</span>
+              <span className="geo-insight-author-divider" aria-hidden="true">&mdash;</span>
+              <span className="geo-insight-author-role">VP of Geoscience &amp; Subsurface Exploration, BluEnergies Ltd.</span>
+            </div>
           </div>
         </div>
 
-        {/* Proven Atlantic Margin Analogues - Comparative Benchmarks */}
-        <div className={`benchmarks-editorial-block motion-fade-up ${inView ? 'is-in-view' : ''}`}>
-          <div className="benchmarks-header">
-            <span className="benchmarks-kicker">COMPARATIVE BENCHMARKS</span>
-            <h3 className="benchmarks-title">Proven Atlantic Margin Analogues</h3>
-            <p className="benchmarks-lede">
-              Geological and stratigraphic characteristics consistent with major Cretaceous turbidite successes along the Atlantic margin.
+        {/* =========================================================
+           4. COMPARATIVE RESEARCH STRIP ("Proven Atlantic Margin Analogues")
+           ========================================================= */}
+        <div className={`analogues-research-block motion-fade-up ${inView ? 'is-in-view' : ''}`}>
+          <div className="analogues-header">
+            <div className="analogues-title-wrap">
+              <span className="analogues-kicker">COMPARATIVE RESEARCH &amp; ANALOGUES</span>
+              <h3 className="analogues-title">Proven Atlantic Margin Analogues</h3>
+            </div>
+            <p className="analogues-lede">
+              Geological, geochemical, and stratigraphic characteristics directly consistent with world-class Cretaceous turbidite discoveries along the conjugate Atlantic margins.
             </p>
           </div>
 
-          <div className="benchmarks-grid">
+          <div className="analogues-strip">
             {analogues.map((item, idx) => (
-              <div key={idx} className={`benchmark-card motion-fade-up stagger-${idx + 1} ${inView ? 'is-in-view' : ''}`}>
-                <h4 className="benchmark-name">{item.name}</h4>
-                <div className="benchmark-basin">{item.basin}</div>
-                <div className="benchmark-resource-pill">
-                  <span className="res-prefix">RESOURCES:</span>
-                  <span className="res-amount">{item.resource}</span>
+              <div key={idx} className={`analogue-entry motion-fade-up stagger-${idx + 1} ${inView ? 'is-in-view' : ''}`}>
+                <div className="analogue-topline">
+                  <span className="analogue-index">0{idx + 1}</span>
+                  <span className="analogue-basin-tag">{item.basin}</span>
                 </div>
-                <p className="benchmark-desc">{item.desc}</p>
+
+                <h4 className="analogue-name">{item.name}</h4>
+
+                <div className="analogue-resource-metric">
+                  <span className="analogue-metric-label">PROVEN RESOURCE</span>
+                  <span className="analogue-metric-val">{item.resource}</span>
+                </div>
+
+                <p className="analogue-desc">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Mandatory Regulatory Disclosure Bar (NI 51-101 Compliant) */}
-        <div className={`regulatory-bar motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
-          <div className="regulatory-bar-accent" aria-hidden="true"></div>
-          <div className="regulatory-bar-label">
-            REGULATORY DISCLOSURE (TSX.V: BLU)
+        {/* =========================================================
+           5. REGULATORY DISCLOSURE FOOTNOTE (NI 51-101 COMPLIANT)
+           ========================================================= */}
+        <footer className={`regulatory-disclosure-footnote motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
+          <div className="regulatory-footnote-indicator" aria-hidden="true"></div>
+          <div className="regulatory-footnote-content">
+            <span className="regulatory-footnote-tag">STATUTORY REGULATORY DISCLOSURE (TSX.V: BLU &bull; OTCQX: BLUGF)</span>
+            <p className="regulatory-footnote-text">
+              Prospective resources are un-risked estimates of petroleum that may potentially be recovered by the application of future development projects. The evaluation of hydrocarbon potential is subject to significant uncertainties, including geological, geophysical, and commercial risks. There is no guarantee that a discovery will be made, and no assurance that any resources will be commercially recoverable.
+            </p>
           </div>
-          <p className="regulatory-bar-text">
-            Prospective resources are un-risked estimates of petroleum that may potentially be recovered by the application of future development projects. The evaluation of hydrocarbon potential is subject to significant uncertainties, including geological, geophysical, and commercial risks. There is no guarantee that a discovery will be made, and no assurance that any resources will be commercially recoverable.
-          </p>
-        </div>
+        </footer>
       </div>
     </section>
   );

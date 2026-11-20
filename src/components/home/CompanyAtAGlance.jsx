@@ -16,23 +16,14 @@ export default function CompanyAtAGlance() {
   return (
     <section id="at-a-glance" ref={sectionRef} className="section section-dark-navy theme-dark metrics-section">
       <div className="container">
-        {/* Top Cartographic / Technical Coordinate Header Strip */}
-        <div className={`technical-ledger-strip motion-fade ${inView ? 'is-in-view' : ''}`}>
-          <div className="ledger-strip-left">
-            <span className="ledger-tag">CONCESSION REGISTER</span>
-            <span className="ledger-coord">RECONNAISSANCE LICENCE RL-003</span>
-            <span className="ledger-divider" aria-hidden="true">|</span>
-            <span className="ledger-coord">BOUNDS: 4°10&apos;N – 5°05&apos;N &bull; 7°45&apos;W – 9°15&apos;W</span>
-          </div>
-          <div className="ledger-strip-right">
-            <span className="ledger-status-dot" aria-hidden="true"></span>
-            <span className="ledger-status-text">OFFICIAL EQUITY DISCLOSURE</span>
-          </div>
-        </div>
-
-        {/* Section Header */}
+        {/* =========================================================
+           1. SECTION HEADER (CLEAN INSTITUTIONAL EDITORIAL)
+           ========================================================= */}
         <div className={`metrics-header motion-fade-up ${inView ? 'is-in-view' : ''}`}>
-          <Eyebrow text="EXPLORATION AT A GLANCE" theme="dark" />
+          <div className="metrics-header-meta">
+            <Eyebrow text="EXPLORATION AT A GLANCE" theme="dark" />
+            <span className="metrics-concession-tag">RECONNAISSANCE LICENCE RL-003</span>
+          </div>
           <h2 className="metrics-title">
             Key Operational &amp; Exploration Metrics
           </h2>
@@ -41,129 +32,129 @@ export default function CompanyAtAGlance() {
           </p>
         </div>
 
-        {/* Human-Crafted Swiss Architectural Data Ledger (Replacing generic card boxes) */}
-        <div className={`technical-ledger-board ${inView ? 'is-in-view' : ''}`}>
-          {/* Row 1: Operating Equity Balance (35% BluEnergies / 65% TotalEnergies) */}
-          <div className="ledger-row ledger-row-equity motion-fade-up stagger-1">
-            <div className="ledger-col-meta">
-              <span className="ledger-index">01 / COMMERCIAL STRUCTURE</span>
-              <h3 className="ledger-row-title">Operating Equity &amp; Participating Interest</h3>
-              <p className="ledger-row-desc">
-                Governed under a Joint Study and Assessment Agreement with energy supermajor TotalEnergies acting as operating partner.
-              </p>
+        {/* =========================================================
+           2. UPPER EDITORIAL TIER: PARTNERSHIP & FOOTPRINT (2 COLS)
+           ========================================================= */}
+        <div className="metrics-upper-tier">
+          {/* A. Partnership Structure (Unified 35/65 Proportional Comparison) */}
+          <div className={`metrics-partnership-block motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
+            <div className="metrics-block-eyebrow">
+              <span className="metrics-eyebrow-index">01</span>
+              <span className="metrics-eyebrow-text">PARTNERSHIP STRUCTURE</span>
             </div>
 
-            <div className="ledger-col-equity-display">
-              {/* BluEnergies Share */}
-              <div className="ledger-equity-block ledger-equity-blu">
-                <div className="ledger-equity-header">
-                  <span className="ledger-equity-brand">BluEnergies</span>
-                  <span className="ledger-equity-role">Carried Working Interest</span>
+            <div className="partnership-comparison">
+              <div className="partnership-figures-row">
+                {/* BluEnergies side */}
+                <div className="partnership-party is-blu">
+                  <div className="partnership-pct">{bluInterest}%</div>
+                  <div className="partnership-party-name">BluEnergies</div>
+                  <div className="partnership-party-role">Participating Interest (Carried)</div>
                 </div>
-                <div className="ledger-equity-number">{bluInterest}%</div>
-                <div className="ledger-equity-bar-track">
-                  <div className={`ledger-equity-bar-fill-blu ${inView ? 'is-active' : ''}`}></div>
+
+                {/* TotalEnergies side */}
+                <div className="partnership-party is-total">
+                  <div className="partnership-pct">{totalInterest}%</div>
+                  <div className="partnership-party-name">TotalEnergies</div>
+                  <div className="partnership-party-role">Operating Partner (Lead)</div>
                 </div>
               </div>
 
-              {/* Central Partnership Link Icon */}
-              <div className="ledger-equity-connector" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M11 17l-4 4a2.828 2.828 0 1 1-4-4l4-4m12 0l4 4a2.828 2.828 0 1 1-4 4l-4-4m-5-5l5 5m-2-7l2-2a2.828 2.828 0 0 1 4 4l-2 2" />
-                </svg>
+              {/* Single understated horizontal proportional bar (35/65) */}
+              <div
+                className="partnership-bar-track"
+                role="img"
+                aria-label="Unified exploration interest: BluEnergies 35% carried participating interest, TotalEnergies 65% operating interest"
+              >
+                <div
+                  className={`partnership-bar-blu ${inView ? 'is-active' : ''}`}
+                  style={{ width: '35%' }}
+                />
+                <div
+                  className={`partnership-bar-total ${inView ? 'is-active' : ''}`}
+                  style={{ width: '65%' }}
+                />
               </div>
 
-              {/* TotalEnergies Share */}
-              <div className="ledger-equity-block ledger-equity-total">
-                <div className="ledger-equity-header">
-                  <span className="ledger-equity-brand">TotalEnergies</span>
-                  <span className="ledger-equity-role">Operating Partner (Lead)</span>
-                </div>
-                <div className="ledger-equity-number">{totalInterest}%</div>
-                <div className="ledger-equity-bar-track">
-                  <div className={`ledger-equity-bar-fill-total ${inView ? 'is-active' : ''}`}></div>
-                </div>
-              </div>
+              {/* One short supporting description */}
+              <p className="partnership-description">
+                Governed under a Joint Study and Assessment Agreement (JSAA) for Reconnaissance Licence RL-003, pairing BluEnergies&apos; early basin capture agility with TotalEnergies&apos; deepwater operational pedigree.
+              </p>
             </div>
           </div>
 
-          {/* Row 2: Concession Scale & Acreage Depth */}
-          <div className="ledger-row ledger-row-scale motion-fade-up stagger-2">
-            <div className="ledger-col-meta">
-              <span className="ledger-index">02 / CONCESSION FOOTPRINT</span>
-              <h3 className="ledger-row-title">Gross Exploration Acreage</h3>
-              <p className="ledger-row-desc">
-                Covering 2,205,168 gross acres along the West African Transform Margin, authorized by the Liberia Petroleum Regulatory Authority (LPRA).
-              </p>
+          {/* B. Concession Footprint (Prominent Editorial Statistic) */}
+          <div className={`metrics-footprint-block motion-fade-up stagger-2 ${inView ? 'is-in-view' : ''}`}>
+            <div className="metrics-block-eyebrow">
+              <span className="metrics-eyebrow-index">02</span>
+              <span className="metrics-eyebrow-text">CONCESSION FOOTPRINT</span>
             </div>
 
-            <div className="ledger-col-scale-display">
-              <div className="ledger-huge-metric">
-                <span className="ledger-huge-number">{totalArea}</span>
-                <span className="ledger-huge-unit">km²</span>
+            <div className="footprint-display">
+              <div className="footprint-stat-row">
+                <span className="footprint-number">{totalArea}</span>
+                <span className="footprint-unit">km²</span>
               </div>
-              <div className="ledger-acre-calc">
-                <span className="ledger-calc-tag">EQUIVALENT SCALE</span>
-                <span className="ledger-calc-val">~2.2 Million Gross Acres</span>
-                <span className="ledger-calc-sub">Offshore Liberia Deepwater (Water depths 1,500m – 3,200m)</span>
+
+              <div className="footprint-meta">
+                <h3 className="footprint-title">Gross Exploration Acreage</h3>
+                <div className="footprint-acreage-equiv">
+                  <span className="footprint-acreage-val">~2.2 Million Gross Acres</span>
+                  <span className="footprint-acreage-acres">(2,205,168 acres)</span>
+                </div>
+                <p className="footprint-context">
+                  Deepwater Harper Basin fairway, offshore southern Liberia across water depths of 1,500m to 3,200m, authorized by the Liberia Petroleum Regulatory Authority (LPRA).
+                </p>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Row 3: Subsurface Exploration Assets (3-Column Technical Rail) */}
-          <div className="ledger-row ledger-row-assets motion-fade-up stagger-3">
-            {/* Asset Col 1: 3 Offshore Blocks */}
-            <div className="ledger-asset-card">
-              <div className="ledger-asset-header">
-                <span className="ledger-asset-index">SPEC 01</span>
-                <span className="ledger-asset-badge">LPRA BLOCKS</span>
+        {/* =========================================================
+           3. LOWER EDITORIAL TIER: TECHNICAL EXPLORATION PROGRAMME
+           (THREE CLEAN EDITORIAL COLUMNS WITH EQUAL VISUAL WEIGHT)
+           ========================================================= */}
+        <div className={`metrics-technical-tier motion-fade-up stagger-3 ${inView ? 'is-in-view' : ''}`}>
+          <div className="technical-tier-header">
+            <div className="metrics-block-eyebrow">
+              <span className="metrics-eyebrow-index">03</span>
+              <span className="metrics-eyebrow-text">TECHNICAL EXPLORATION PROGRAMME</span>
+            </div>
+            <span className="technical-tier-caption">Subsurface Evaluation &amp; De-risking Scope</span>
+          </div>
+
+          <div className="technical-columns-grid">
+            {/* Column 1: 3 Contiguous Exploration Blocks */}
+            <div className={`technical-col motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
+              <div className="technical-metric-num">
+                {blocksCount}
               </div>
-              <div className="ledger-asset-number">{blocksCount}</div>
-              <h4 className="ledger-asset-title">Contiguous Exploration Blocks</h4>
-              <p className="ledger-asset-desc">
-                Blocks LB-26, LB-30, and LB-31 positioned across the high-potential Cretaceous fan fairway.
+              <h4 className="technical-metric-title">Contiguous Exploration Blocks</h4>
+              <p className="technical-metric-desc">
+                Blocks LB-26, LB-30, and LB-31 positioned across the high-potential Cretaceous slope-to-basin fairway in water depths of 1,500m to 3,200m.
               </p>
-              <div className="ledger-asset-tags">
-                <span>LB-26 (Slope)</span>
-                <span>LB-30 (Central)</span>
-                <span>LB-31 (Distal)</span>
-              </div>
             </div>
 
-            {/* Asset Col 2: 3D Seismic Reprocessing */}
-            <div className="ledger-asset-card">
-              <div className="ledger-asset-header">
-                <span className="ledger-asset-index">SPEC 02</span>
-                <span className="ledger-asset-badge">GEOPHYSICAL DATA</span>
+            {/* Column 2: 6,167 km² of 3D Seismic Reprocessing */}
+            <div className={`technical-col motion-fade-up stagger-2 ${inView ? 'is-in-view' : ''}`}>
+              <div className="technical-metric-num">
+                {seismicArea} <span className="technical-metric-unit">km²</span>
               </div>
-              <div className="ledger-asset-number">
-                {seismicArea} <span className="ledger-asset-unit">km²</span>
-              </div>
-              <h4 className="ledger-asset-title">3D Seismic Reprocessing</h4>
-              <p className="ledger-asset-desc">
-                High-density 3D seismic volume currently undergoing broadband PSDM/PSTM depth migration with TGS.
+              <h4 className="technical-metric-title">3D Seismic Reprocessing</h4>
+              <p className="technical-metric-desc">
+                High-density 3D seismic volume currently undergoing advanced broadband PSDM and PSTM depth migration with TGS, covering 69% of the licence footprint.
               </p>
-              <div className="ledger-asset-tags">
-                <span>Contractor: TGS ASA</span>
-                <span>69% Acreage Coverage</span>
-              </div>
             </div>
 
-            {/* Asset Col 3: Identified Cretaceous Fan Systems */}
-            <div className="ledger-asset-card">
-              <div className="ledger-asset-header">
-                <span className="ledger-asset-index">SPEC 03</span>
-                <span className="ledger-asset-badge">SUBSURFACE TARGETS</span>
+            {/* Column 3: 6 Mapped Cretaceous Basin Floor Fans */}
+            <div className={`technical-col motion-fade-up stagger-3 ${inView ? 'is-in-view' : ''}`}>
+              <div className="technical-metric-num">
+                {fansCount}
               </div>
-              <div className="ledger-asset-number">{fansCount}</div>
-              <h4 className="ledger-asset-title">Cretaceous Basin Floor Fans</h4>
-              <p className="ledger-asset-desc">
-                Mapped turbidite reservoir complexes displaying class II/III AVO anomalies analogous to major margin discoveries.
+              <h4 className="technical-metric-title">Mapped Basin Floor Fans</h4>
+              <p className="technical-metric-desc">
+                Identified Cretaceous turbidite reservoir targets displaying pronounced class II/III AVO amplitude anomalies analogous to major conjugate margin discoveries.
               </p>
-              <div className="ledger-asset-tags">
-                <span>Target: Upper Cretaceous</span>
-                <span>Certified Fan Complex</span>
-              </div>
             </div>
           </div>
         </div>

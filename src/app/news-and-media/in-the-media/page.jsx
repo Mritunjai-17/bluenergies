@@ -1,77 +1,85 @@
-import PageHero from '../../../components/ui/PageHero';
-import Section from '../../../components/ui/Section';
+import Eyebrow from '../../../components/ui/Eyebrow';
+import SubnavTabs from '../../../components/ui/SubnavTabs';
 import { mediaArticles } from '../../../data/media.ts';
 
 export const metadata = {
-  title: 'In the Media',
-  description: 'External news coverage and industry commentary covering BluEnergies Ltd. and West Africa deepwater exploration.'
+  title: 'In the Media | Industry Coverage | BluEnergies Ltd.',
+  description: 'External news coverage, trade publication commentary, and industry analysis covering BluEnergies Ltd. and West Africa deepwater exploration.'
 };
 
 export default function InTheMediaPage() {
+  const mediaTabs = [
+    { label: 'News Releases', href: '/news-and-media/news/' },
+    { label: 'In the Media', href: '/news-and-media/in-the-media/' }
+  ];
+
   return (
-    <>
-      <PageHero
-        eyebrow="News & media"
-        title="In the Media"
-        lede="External coverage, international industry commentary, and editorial features covering our offshore exploration operations."
-      />
+    <div className="page-light-wrapper">
+      {/* =========================================================
+         1. MEDIA HERO & SUBNAV (WARM IVORY TONE)
+         ========================================================= */}
+      <section className="news-hero-section tone-ivory" aria-label="Media Coverage Hero">
+        <div className="container">
+          <SubnavTabs items={mediaTabs} activeHref="/news-and-media/in-the-media/" theme="light" ariaLabel="Media Sections" />
 
-      <Section background="paper">
-        <div>
-          <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Industry Coverage & Features</h2>
-          <p className="lede" style={{ color: 'var(--muted)', marginBottom: '2.5rem', maxWidth: '75ch' }}>
-            Articles and technical reports published by independent energy publications tracking West Africa’s deepwater margin and the Harper Basin work programme.
-          </p>
+          <div className="news-hero-intro motion-fade-up">
+            <Eyebrow text="External Coverage" theme="light" />
+            <h1 className="news-hero-title">
+              In the Media &amp; Industry Publications
+            </h1>
+            <div className="inv-accent-bar" aria-hidden="true"></div>
+            <p className="news-hero-lede">
+              Independent coverage, geological trade features, and energy sector reporting tracking deepwater Atlantic Margin exploration in the Harper Basin.
+            </p>
+          </div>
+        </div>
+      </section>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+      {/* =========================================================
+         2. EDITORIAL MEDIA COVERAGE LIST (WARM IVORY TONE)
+         ========================================================= */}
+      <section className="news-archive-section tone-ivory" aria-label="Media Articles">
+        <div className="container">
+          <div className="media-editorial-list motion-fade-up">
             {mediaArticles.map((article) => (
-              <article
-                key={article.headline}
-                style={{
-                  padding: '24px',
-                  background: 'var(--foam)',
-                  borderRadius: 'var(--radius-md)',
-                  borderLeft: '3px solid var(--deep-teal)',
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                  alignItems: 'center',
-                  gap: '24px'
-                }}
-              >
-                <div>
-                  <div style={{ fontWeight: 700, color: 'var(--navy)', fontSize: '1.05rem' }}>{article.publication}</div>
-                  <div style={{ fontSize: '0.85rem', color: 'var(--muted)', marginTop: '2px' }}>{article.date}</div>
-                </div>
-
-                <div style={{ gridColumn: 'span 2' }}>
-                  <h3 style={{ fontSize: '1.18rem', marginBottom: '6px', color: 'var(--ink)' }}>{article.headline}</h3>
-                  {article.notes && (
-                    <p style={{ fontSize: '0.88rem', color: 'var(--muted)', margin: 0 }}>
-                      {article.isVerified ? article.notes : <span className="content-needed">{article.notes}</span>}
-                    </p>
+              <article key={article.headline} className="media-editorial-card tone-card-light">
+                <div className="media-card-top">
+                  <div className="media-card-pub">
+                    <strong className="media-pub-name">{article.publication}</strong>
+                    <span className="media-pub-date">{article.date}</span>
+                  </div>
+                  {article.isVerified ? (
+                    <span className="media-verified-badge">Verified Coverage</span>
+                  ) : (
+                    <span className="media-industry-tag">Industry Feature</span>
                   )}
                 </div>
 
-                <div style={{ justifySelf: 'end' }}>
-                  {article.isVerified ? (
+                <h2 className="media-card-title">{article.headline}</h2>
+                <p className="media-card-excerpt">{article.excerpt}</p>
+
+                <div className="media-card-footer">
+                  <span className="media-card-topic">TOPIC: {article.topic || 'Atlantic Margin Exploration'}</span>
+                  {article.sourceUrl ? (
                     <a
-                      href={article.url}
+                      href={article.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn btn-secondary-light"
-                      style={{ padding: '8px 18px', fontSize: '0.88rem' }}
+                      className="media-card-link"
+                      aria-label={`Read ${article.headline} on ${article.publication}`}
                     >
-                      Read article &rarr;
+                      <span>Read article on publication</span>
+                      <span aria-hidden="true">&rarr;</span>
                     </a>
                   ) : (
-                    <span className="content-needed" style={{ fontSize: '0.8rem' }}>Archive unverified</span>
+                    <span className="media-card-archive-note">Published in Print &amp; Digital Editions</span>
                   )}
                 </div>
               </article>
             ))}
           </div>
         </div>
-      </Section>
-    </>
+      </section>
+    </div>
   );
 }

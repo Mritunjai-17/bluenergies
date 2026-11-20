@@ -17,6 +17,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -95,8 +96,9 @@ small, .text-small {
 
 a {
   color: inherit;
+  text-decoration: none;
   text-decoration-skip-ink: auto;
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast), opacity var(--transition-fast);
 }
 
 a:focus-visible,
@@ -127,30 +129,30 @@ select:focus-visible {
   top: 14px;
 }
 
-/* Layout Utilities */
+/* Layout Utilities — Unified Responsive Container System (Max 1360px) */
 .container {
-  width: min(var(--container-width-desktop, 94%), var(--content-max-width, 1760px));
-  max-width: var(--content-max-width, 1760px);
+  width: min(var(--container-width-desktop, 92%), var(--content-max-width, 1360px));
+  max-width: var(--content-max-width, 1360px);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--container-gutter);
-  padding-right: var(--container-gutter);
+  padding-left: var(--container-gutter, clamp(24px, 4vw, 56px));
+  padding-right: var(--container-gutter, clamp(24px, 4vw, 56px));
   box-sizing: border-box;
 }
 
 @media (max-width: 1024px) {
   .container {
-    width: var(--container-width-tablet, 95%);
-    padding-left: clamp(16px, 2.5vw, 24px);
-    padding-right: clamp(16px, 2.5vw, 24px);
+    width: min(var(--container-width-tablet, 94%), 1360px);
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 
 @media (max-width: 768px) {
   .container {
-    width: var(--container-width-mobile, 92%);
-    padding-left: var(--container-gutter-mobile);
-    padding-right: var(--container-gutter-mobile);
+    width: 100%;
+    padding-left: var(--container-gutter-mobile, 20px);
+    padding-right: var(--container-gutter-mobile, 20px);
   }
 }
 

@@ -1,40 +1,77 @@
+'use client';
+
+import Link from 'next/link';
 import Section from '../ui/Section';
 import Eyebrow from '../ui/Eyebrow';
 import Button from '../ui/Button';
 import { team } from '../../data/team.ts';
 
 export default function LeadershipIntro() {
+  // Take top 4 executive board leaders
   const leadershipPreview = team.slice(0, 4);
 
   return (
-    <Section background="white" id="leadership">
-      <div className="motion-fade-up" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px', flexWrap: 'wrap', gap: '20px' }}>
-        <div>
+    <Section background="warm-white" id="leadership" className="home-leadership-section">
+      <div className="motion-fade-up home-leadership-header">
+        <div className="home-leadership-header-left">
           <Eyebrow text="Leadership & Governance" theme="light" />
-          <h2 style={{ fontSize: 'clamp(2rem, 3.4vw, 2.7rem)', lineHeight: 1.2, margin: 0, color: 'var(--text-dark)' }}>
+          <h2 className="home-leadership-title">
             Experienced Exploration Leadership
           </h2>
-          <p className="lede" style={{ color: 'var(--text-secondary)', marginTop: '12px', marginBottom: 0, maxWidth: '75ch' }}>
+          <p className="home-leadership-lede">
             Guided by an experienced board and technical executive team with over a century of combined global hydrocarbon exploration and capital markets leadership.
           </p>
         </div>
         <Button href="/corporate/board-management/" variant="secondary" theme="light">
-          Meet full leadership
+          Meet full leadership &rarr;
         </Button>
       </div>
 
-      <div className="leadership-cards-grid">
+      <div className="home-leadership-grid">
         {leadershipPreview.map((member, idx) => (
-          <div key={member.name} className={`leadership-card motion-fade-up stagger-${idx + 1}`}>
-            <div className="leadership-card-initials" aria-hidden="true">
-              {member.name.split(' ').map(n => n[0]).join('')}
-            </div>
-            <h3 className="leadership-card-name">{member.name}</h3>
-            <span className="leadership-card-role">{member.role}</span>
-            <p className="leadership-card-bio">
-              {member.bio.replace(/\[CONTENT NEEDED:.*?\]/g, '')}
-            </p>
-          </div>
+          <article key={member.id || member.name} className={`home-leader-card motion-fade-up stagger-${idx + 1}`}>
+            <Link
+              href="/corporate/board-management/"
+              className="home-leader-card-link"
+              aria-label={`View biography of ${member.name}, ${member.role}`}
+            >
+              {/* Executive Portrait Frame */}
+              <div className="home-leader-photo-wrap">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={`${member.name} — ${member.role} at BluEnergies Ltd.`}
+                    className="home-leader-photo"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="home-leader-fallback">
+                    <span>{member.name.split(' ').map(n => n[0]).join('')}</span>
+                  </div>
+                )}
+
+                {/* Governance Role Tag */}
+                {member.committee ? (
+                  <span className="home-leader-badge is-highlight">{member.committee}</span>
+                ) : member.isIndependent ? (
+                  <span className="home-leader-badge">Independent</span>
+                ) : (
+                  <span className="home-leader-badge">Executive</span>
+                )}
+              </div>
+
+              {/* Leader Narrative */}
+              <div className="home-leader-body">
+                <h3 className="home-leader-name">{member.name}</h3>
+                <span className="home-leader-role">{member.role}</span>
+                <p className="home-leader-excerpt">{member.excerpt}</p>
+                <div className="home-leader-action">
+                  <span>View full biography</span>
+                  <span className="home-leader-arrow" aria-hidden="true">&rarr;</span>
+                </div>
+              </div>
+            </Link>
+          </article>
         ))}
       </div>
     </Section>
