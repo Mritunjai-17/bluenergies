@@ -137,7 +137,7 @@ export default function AssetsOverviewPage() {
             <div className="assets-hero-visual-col motion-fade-up stagger-1">
               <div className="assets-visual-frame">
                 <img
-                  src="/img/news-vessel-hires.png"
+                  src="/img/vessel-editorial-hires.jpg"
                   alt="High-specification offshore seismic vessel conducting broadband survey operations in deepwater Liberia"
                   className="assets-visual-img"
                 />

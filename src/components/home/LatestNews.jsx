@@ -32,14 +32,14 @@ export default function LatestNews() {
           </Link>
         </div>
 
-        {/* 2. Human-Crafted Editorial Grid */}
+        {/* 2. Symmetrical, Balanced Editorial Grid */}
         <div className="home-news-editorial-grid">
           {/* Left Column: Prominent Featured Story */}
           {featured && (
             <article className={`home-news-lead-card motion-fade-up ${inView ? 'is-in-view' : ''}`}>
               <div className="home-news-lead-visual">
                 <img
-                  src="/img/news-vessel-hires.png"
+                  src="/img/vessel-editorial-hires.jpg"
                   alt="Offshore seismic exploration vessel operating in deepwater West Africa"
                   className="home-news-lead-img"
                 />
@@ -50,15 +50,28 @@ export default function LatestNews() {
               </div>
 
               <div className="home-news-lead-content">
-                <h3 className="home-news-lead-title">
-                  <Link href={`/news-and-media/news/${featured.slug}/`}>
-                    {featured.title}
-                  </Link>
-                </h3>
+                <div className="home-news-lead-main">
+                  <h3 className="home-news-lead-title">
+                    <Link href={`/news-and-media/news/${featured.slug}/`}>
+                      {featured.title}
+                    </Link>
+                  </h3>
 
-                <p className="home-news-lead-summary">
-                  {featured.summary}
-                </p>
+                  <p className="home-news-lead-summary">
+                    {featured.summary}
+                  </p>
+
+                  <div className="home-news-lead-brief">
+                    <p className="home-news-lead-detail">
+                      The appointed advisors provide strategic market consultation, technical review coordination, and corporate advisory services to support exploration milestones across the Harper Basin and evaluate ongoing commercial initiatives.
+                    </p>
+                    <div className="home-news-lead-chips">
+                      <span className="home-news-chip">Capital Markets Advisory</span>
+                      <span className="home-news-chip">Harper Basin RL-003</span>
+                      <span className="home-news-chip">TSXV: BLU</span>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="home-news-lead-footer">
                   <Link href={`/news-and-media/news/${featured.slug}/`} className="home-news-cta">
@@ -74,30 +87,42 @@ export default function LatestNews() {
           )}
 
           {/* Right Column: Clean Editorial Stacked Rows */}
-          <div className="home-news-stacked-list">
-            {stacked.map((item, idx) => (
-              <article key={item.slug} className={`home-news-stacked-row motion-fade-up stagger-${idx + 1} ${inView ? 'is-in-view' : ''}`}>
-                <div className="home-news-row-meta">
-                  <time className="home-news-row-date">{item.date}</time>
-                  <span className="home-news-row-badge">TSXV Release</span>
-                </div>
+          <div className={`home-news-stacked-list motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
+            <div className="home-news-stacked-items">
+              {stacked.map((item, idx) => (
+                <article key={item.slug} className={`home-news-stacked-row stagger-${idx + 1}`}>
+                  <div className="home-news-row-meta">
+                    <span className="home-news-row-badge">TSXV Release</span>
+                    <time className="home-news-row-date">{item.date}</time>
+                  </div>
 
-                <h3 className="home-news-row-title">
-                  <Link href={`/news-and-media/news/${item.slug}/`} className="home-news-row-link">
-                    {item.title}
+                  <h3 className="home-news-row-title">
+                    <Link href={`/news-and-media/news/${item.slug}/`} className="home-news-row-link">
+                      {item.title}
+                    </Link>
+                  </h3>
+
+                  <p className="home-news-row-summary">
+                    {item.summary}
+                  </p>
+
+                  <Link href={`/news-and-media/news/${item.slug}/`} className="home-news-row-action">
+                    <span>Read release</span>
+                    <span aria-hidden="true">&rarr;</span>
                   </Link>
-                </h3>
+                </article>
+              ))}
+            </div>
 
-                <p className="home-news-row-summary">
-                  {item.summary}
-                </p>
-
-                <Link href={`/news-and-media/news/${item.slug}/`} className="home-news-row-action">
-                  <span>Read release</span>
-                  <span aria-hidden="true">&rarr;</span>
-                </Link>
-              </article>
-            ))}
+            <div className="home-news-stacked-footer">
+              <Link href="/news-and-media/news/" className="home-news-cta">
+                <span>View all announcements</span>
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
+              <span className="home-news-disclosure-note">
+                SEDAR+ Disclosures Archive
+              </span>
+            </div>
           </div>
         </div>
       </Section>

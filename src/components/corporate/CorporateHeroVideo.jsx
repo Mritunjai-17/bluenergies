@@ -157,7 +157,7 @@ export default function CorporateHeroVideo() {
           {/* Authentic High-Resolution Offshore Exploration Vessel */}
           <div className="hero-video-image-box">
             <img
-              src="/img/news-vessel-hires.png"
+              src="/img/vessel-editorial-hires.jpg"
               alt="Offshore seismic exploration vessel conducting broadband acquisition in deepwater Liberia"
               className="hero-video-img"
             />

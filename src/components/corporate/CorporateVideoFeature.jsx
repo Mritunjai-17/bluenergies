@@ -167,7 +167,7 @@ export default function CorporateVideoFeature() {
           {/* Authentic High-Resolution Offshore Exploration Vessel */}
           <div className="corp-media-bg">
             <img
-              src="/img/news-vessel-hires.png"
+              src="/img/vessel-editorial-hires.jpg"
               alt="Offshore seismic exploration vessel conducting broadband acquisition in deepwater West Africa"
               className="corp-media-img"
             />
