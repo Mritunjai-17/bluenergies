@@ -9,6 +9,14 @@ export default function InvestorSnapshot() {
   const [sectionRef, inView] = useInView({ threshold: 0.15 });
   const milestoneAmount = useCountUp(20.7, 1400, inView, { decimals: 1 });
 
+  const handleSpotlight = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    e.currentTarget.style.setProperty('--spotlight-x', `${x}px`);
+    e.currentTarget.style.setProperty('--spotlight-y', `${y}px`);
+  };
+
   return (
     <div ref={sectionRef}>
       <Section background="dark-navy" id="investor-snapshot" className="investor-snapshot-section">
@@ -29,7 +37,10 @@ export default function InvestorSnapshot() {
             </div>
 
             {/* Official Capital Markets & Registrar Dossier (Human Agency Craft) */}
-            <div className={`investor-ledger-box motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
+            <div
+              className={`investor-ledger-box motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}
+              onMouseMove={handleSpotlight}
+            >
               <div className="investor-ledger-header">
                 <span className="ledger-box-tag">MARKET IDENTIFIERS</span>
                 <span className="ledger-box-sedar">SEDAR+ PROFILE: 00054231</span>
@@ -66,7 +77,10 @@ export default function InvestorSnapshot() {
             {/* Top Ticker Cards (TSXV: BLU & OTCQX: BLUGF) */}
             <div className={`investor-tickers-grid motion-fade-up stagger-1 ${inView ? 'is-in-view' : ''}`}>
               {/* Card 1: Primary Exchange */}
-              <div className="investor-exchange-card investor-card-tsxv">
+              <div
+                className="investor-exchange-card investor-card-tsxv"
+                onMouseMove={handleSpotlight}
+              >
                 <div className="investor-exchange-content">
                   <span className="investor-exchange-eyebrow">Primary Exchange</span>
                   <div className="investor-exchange-ticker">TSXV: BLU</div>
@@ -75,7 +89,10 @@ export default function InvestorSnapshot() {
               </div>
 
               {/* Card 2: US Quotation */}
-              <div className="investor-exchange-card investor-card-otcqx">
+              <div
+                className="investor-exchange-card investor-card-otcqx"
+                onMouseMove={handleSpotlight}
+              >
                 <div className="investor-exchange-content">
                   <span className="investor-exchange-eyebrow">US Quotation</span>
                   <div className="investor-exchange-ticker">OTCQX: BLUGF</div>
@@ -85,7 +102,10 @@ export default function InvestorSnapshot() {
             </div>
 
             {/* Middle Card: Recent Financing Milestone */}
-            <div className={`investor-milestone-card motion-fade-up stagger-2 ${inView ? 'is-in-view' : ''}`}>
+            <div
+              className={`investor-milestone-card motion-fade-up stagger-2 ${inView ? 'is-in-view' : ''}`}
+              onMouseMove={handleSpotlight}
+            >
               <div className="investor-milestone-icon-wrap" aria-hidden="true">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <ellipse cx="12" cy="5" rx="8" ry="3"/>
@@ -108,7 +128,11 @@ export default function InvestorSnapshot() {
 
             {/* Bottom 3 Action Cards with Concrete Formats & Document Sizes */}
             <div className={`investor-actions-grid motion-fade-up stagger-3 ${inView ? 'is-in-view' : ''}`}>
-              <a href="/investors/presentations/" className="investor-action-tile">
+              <a
+                href="/investors/presentations/"
+                className="investor-action-tile"
+                onMouseMove={handleSpotlight}
+              >
                 <div className="action-tile-left">
                   <span className="action-tile-icon" aria-hidden="true">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -126,7 +150,11 @@ export default function InvestorSnapshot() {
                 <span className="action-tile-arrow" aria-hidden="true">&rarr;</span>
               </a>
 
-              <a href="/investors/financials/" className="investor-action-tile">
+              <a
+                href="/investors/financials/"
+                className="investor-action-tile"
+                onMouseMove={handleSpotlight}
+              >
                 <div className="action-tile-left">
                   <span className="action-tile-icon" aria-hidden="true">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -143,7 +171,11 @@ export default function InvestorSnapshot() {
                 <span className="action-tile-arrow" aria-hidden="true">&rarr;</span>
               </a>
 
-              <a href="/contact/contact-details/" className="investor-action-tile">
+              <a
+                href="/contact/contact-details/"
+                className="investor-action-tile"
+                onMouseMove={handleSpotlight}
+              >
                 <div className="action-tile-left">
                   <span className="action-tile-icon" aria-hidden="true">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

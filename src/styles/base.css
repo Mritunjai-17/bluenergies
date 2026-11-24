@@ -129,28 +129,31 @@ select:focus-visible {
   top: 14px;
 }
 
-/* Layout Utilities — Unified Responsive Container System (Max 1360px) */
-.container {
-  width: min(var(--container-width-desktop, 92%), var(--content-max-width, 1360px));
-  max-width: var(--content-max-width, 1360px);
+/* Layout Utilities — Unified Responsive Container System (Max 1420px, 92% Width, No Desktop Inset Padding) */
+.container,
+.exploration-container {
+  width: min(var(--container-width-desktop, 92%), var(--content-max-width, 1420px));
+  max-width: var(--content-max-width, 1420px);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--container-gutter, clamp(24px, 4vw, 56px));
-  padding-right: var(--container-gutter, clamp(24px, 4vw, 56px));
+  padding-left: 0;
+  padding-right: 0;
   box-sizing: border-box;
 }
 
 @media (max-width: 1024px) {
-  .container {
-    width: min(var(--container-width-tablet, 94%), 1360px);
-    padding-left: 32px;
-    padding-right: 32px;
+  .container,
+  .exploration-container {
+    width: min(var(--container-width-tablet, 94%), 100%);
+    padding-left: clamp(16px, 2.5vw, 24px);
+    padding-right: clamp(16px, 2.5vw, 24px);
   }
 }
 
 @media (max-width: 768px) {
-  .container {
-    width: 100%;
+  .container,
+  .exploration-container {
+    width: min(var(--container-width-mobile, 92%), 100%);
     padding-left: var(--container-gutter-mobile, 20px);
     padding-right: var(--container-gutter-mobile, 20px);
   }

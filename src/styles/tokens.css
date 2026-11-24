@@ -43,14 +43,14 @@
   --font-small: 0.92rem;
   --font-btn: 0.97rem;
 
-  /* Spacing */
-  --content-max-width: 1360px;
+  /* Spacing — Unified 1420px Maximum Grid (Zero Desktop Inset Padding) */
+  --content-max-width: 1420px;
   --container-width-desktop: 92%;
   --container-width-tablet: 94%;
   --container-width-mobile: 92%;
-  --section-padding-y: 100px;
+  --section-padding-y: clamp(80px, 9vh, 108px);
   --section-padding-y-mobile: 68px;
-  --container-gutter: clamp(24px, 4vw, 56px);
+  --container-gutter: 0px;
   --container-gutter-mobile: 20px;
 
   /* Elevation and radiuses */

@@ -6,6 +6,15 @@ import { useInView } from '../../hooks/useMotion';
 
 export default function WorkProgramme() {
   const [gridRef, inView] = useInView({ threshold: 0.1 });
+
+  const handleSpotlight = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    e.currentTarget.style.setProperty('--spotlight-x', `${x}px`);
+    e.currentTarget.style.setProperty('--spotlight-y', `${y}px`);
+  };
+
   const steps = [
     {
       num: '01',
@@ -92,29 +101,26 @@ export default function WorkProgramme() {
       ),
       scopeIcon: (
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
-          <line x1="12" y1="18" x2="12" y2="12"/>
-          <line x1="9" y1="15" x2="15" y2="15"/>
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
         </svg>
       ),
       statusIcon: (
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"/>
-          <polyline points="12 6 12 12 16 14"/>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
         </svg>
       )
     },
     {
       num: '04',
-      title: 'Prospect Delineation & Well Targeting',
-      contractor: 'TotalEnergies & BluEnergies Consortium',
-      scope: 'Blocks LB-26, LB-30, LB-31',
-      status: 'Planned Next Stage (2026–2027)',
-      statusType: 'upcoming',
-      desc: 'Full synthesis of reprocessed 3D seismic, AVO amplitude anomalies, and geochemical seepage data to rank drillable prospects and mature candidates for an exploration drilling campaign.',
+      title: 'Prospect Ranking & Well Target Selection',
+      contractor: 'TotalEnergies / BluEnergies Geoscience Team',
+      scope: 'Consortium Technical Integration',
+      status: 'Planned (2026–2027 Spud Preparation)',
+      statusType: 'planned',
+      desc: 'Synthesis of seismic, bathymetric, and geochemical datasets to high-grade Cretaceous fan targets, prioritize exploration drill prospects, and mature candidate well locations for subsequent spudding.',
       image: '/img/work-programme/programme-targeting.png',
-      alt: 'High-amplitude Cretaceous turbidite fan prospect delineation and exploration well target map',
+      alt: 'Well target selection schematic depicting 3D seismic volume prospect ranking and wellbore trajectory',
       contractorIcon: (
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -178,7 +184,11 @@ export default function WorkProgramme() {
 
         <div className="programme-timeline-grid">
           {steps.map((s, idx) => (
-            <div key={idx} className={`programme-card motion-fade-up stagger-${idx + 1} ${inView ? 'is-in-view' : ''}`}>
+            <div
+              key={idx}
+              className={`programme-card motion-fade-up stagger-${idx + 1} ${inView ? 'is-in-view' : ''} ${s.statusType === 'active' ? 'is-phase-active' : ''}`}
+              onMouseMove={handleSpotlight}
+            >
               {/* Left Visual Column: Number Tab + Technical Photo Strip */}
               <div className="programme-visual-col">
                 <div className="programme-num-tab">
@@ -198,6 +208,9 @@ export default function WorkProgramme() {
                 <div className="programme-card-header">
                   <h3 className="programme-card-title">{s.title}</h3>
                   <span className={`programme-status-pill ${s.statusType === 'active' ? 'active' : 'planned'}`}>
+                    {s.statusType === 'active' && (
+                      <span className="programme-status-pulse-dot" aria-hidden="true"></span>
+                    )}
                     <span className="programme-status-icon" aria-hidden="true">{s.statusIcon}</span>
                     <span>{s.status}</span>
                   </span>

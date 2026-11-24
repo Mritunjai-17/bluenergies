@@ -42,6 +42,19 @@ export default function AboutUsPage() {
         </div>
 
         <div className="container">
+          {/* Top Corporate Nav Tabs */}
+          <nav className="corp-subnav-tabs" aria-label="Corporate Pages">
+            <Link href="/corporate/about-us/" className="corp-subnav-tab is-active" aria-current="page">
+              About Us
+            </Link>
+            <Link href="/corporate/board-management/" className="corp-subnav-tab">
+              Board &amp; Management
+            </Link>
+            <Link href="/corporate/corporate-governance/" className="corp-subnav-tab">
+              Corporate Governance
+            </Link>
+          </nav>
+
           {/* Balanced 2-Column Hero Grid: Left Narrative (48%) / Right Cinematic Video (52%) */}
           <div className="corp-hero-grid">
             {/* LEFT COLUMN: Corporate Introduction */}
