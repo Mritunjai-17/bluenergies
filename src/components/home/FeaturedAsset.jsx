@@ -125,103 +125,16 @@ export default function FeaturedAsset() {
                 <span className="concession-term-pill">Term: June 30, 2027</span>
               </div>
 
-              {/* Technical Exploration SVG Map with Authentic Coordinates & Graticule */}
+              {/* Technical Exploration Satellite Bathymetry Concession Map */}
               <div className="concession-svg-wrapper">
-                <svg viewBox="0 0 540 320" fill="none" xmlns="http://www.w3.org/2000/svg" className="concession-svg">
-                  {/* Oceanic Basin Deep Background */}
-                  <rect width="540" height="320" fill="#051826" rx="8" />
-
-                  {/* Cartographic Coordinate Graticule Grid */}
-                  <line x1="180" y1="0" x2="180" y2="320" stroke="rgba(81, 194, 201, 0.08)" strokeWidth="0.8" strokeDasharray="3 3" />
-                  <line x1="360" y1="0" x2="360" y2="320" stroke="rgba(81, 194, 201, 0.08)" strokeWidth="0.8" strokeDasharray="3 3" />
-                  <line x1="0" y1="120" x2="540" y2="120" stroke="rgba(81, 194, 201, 0.08)" strokeWidth="0.8" strokeDasharray="3 3" />
-                  <line x1="0" y1="220" x2="540" y2="220" stroke="rgba(81, 194, 201, 0.08)" strokeWidth="0.8" strokeDasharray="3 3" />
-
-                  {/* Latitude / Longitude Marginal Ticks */}
-                  <text x="180" y="14" fill="rgba(81, 194, 201, 0.5)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace" textAnchor="middle">8°45&apos;W</text>
-                  <text x="360" y="14" fill="rgba(81, 194, 201, 0.5)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace" textAnchor="middle">8°15&apos;W</text>
-                  <text x="10" y="123" fill="rgba(81, 194, 201, 0.5)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">4°45&apos;N</text>
-                  <text x="10" y="223" fill="rgba(81, 194, 201, 0.5)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">4°20&apos;N</text>
-
-                  {/* Ambient Bathymetry Contours */}
-                  <path d="M0 65 Q140 50, 280 90 T540 105" stroke="rgba(81, 194, 201, 0.12)" strokeWidth="1" strokeDasharray="4 4" />
-                  <path d="M0 115 Q150 100, 300 140 T540 160" stroke="rgba(81, 194, 201, 0.14)" strokeWidth="1" strokeDasharray="4 4" />
-                  <path d="M0 170 Q160 150, 320 195 T540 220" stroke="rgba(81, 194, 201, 0.14)" strokeWidth="1" strokeDasharray="4 4" />
-                  <path d="M0 225 Q170 205, 340 250 T540 275" stroke="rgba(81, 194, 201, 0.12)" strokeWidth="1" strokeDasharray="4 4" />
-
-                  {/* Coastline and Liberia Mainland */}
-                  <path d="M0 0 L540 0 L540 68 C420 54 280 32 0 44 Z" fill="#09253A" />
-                  <path d="M0 44 C280 32 420 54 540 68" stroke="rgba(81, 194, 201, 0.45)" strokeWidth="1.5" />
-                  <text x="24" y="32" fill="rgba(255, 255, 255, 0.75)" fontSize="11" fontFamily="'Hanken Grotesk', system-ui, sans-serif" fontWeight="700" letterSpacing="0.1em">LIBERIA MAINLAND (SHORELINE)</text>
-
-                  {/* North Compass Arrow */}
-                  <g transform="translate(502, 16)">
-                    <text x="4" y="10" fill="#FFFFFF" fontSize="11" fontFamily="'Hanken Grotesk', system-ui, sans-serif" fontWeight="700" textAnchor="middle">N</text>
-                    <path d="M4 14 L0 28 L4 25 L8 28 Z" fill="#51C2C9" />
-                  </g>
-
-                  {/* Depth Indicators */}
-                  <text x="480" y="118" fill="rgba(81, 194, 201, 0.65)" fontSize="9.5" fontFamily="'Hanken Grotesk', system-ui, sans-serif">1,000 m</text>
-                  <text x="480" y="174" fill="rgba(81, 194, 201, 0.65)" fontSize="9.5" fontFamily="'Hanken Grotesk', system-ui, sans-serif">2,000 m</text>
-                  <text x="480" y="230" fill="rgba(81, 194, 201, 0.65)" fontSize="9.5" fontFamily="'Hanken Grotesk', system-ui, sans-serif">3,000 m</text>
-
-                  {/* Concession Licence Blocks (RL-003) */}
-                  {/* Block LB-26 (Western Slope) */}
-                  <polygon
-                    points="48,102 185,113 172,197 32,186"
-                    fill="rgba(22, 166, 166, 0.12)"
-                    stroke="#16A6A6"
-                    strokeWidth="1.8"
-                  />
-                  <text x="108" y="155" fill="#FFFFFF" fontSize="14" fontWeight="700" fontFamily="'Hanken Grotesk', system-ui, sans-serif" textAnchor="middle">LB-26</text>
-
-                  {/* Block LB-30 (Central Fan Complex) */}
-                  <polygon
-                    points="185,113 335,126 322,210 172,197"
-                    fill="rgba(22, 166, 166, 0.18)"
-                    stroke="#16A6A6"
-                    strokeWidth="1.8"
-                  />
-                  <text x="258" y="167" fill="#FFFFFF" fontSize="14" fontWeight="700" fontFamily="'Hanken Grotesk', system-ui, sans-serif" textAnchor="middle">LB-30</text>
-
-                  {/* Concession Radar Beacon Pulse on LB-30 */}
-                  <g className="concession-beacon" aria-hidden="true">
-                    <circle cx="258" cy="180" r="3.5" fill="#51C2C9" />
-                    <circle cx="258" cy="180" r="14" fill="none" stroke="#51C2C9" strokeWidth="1.2" className="beacon-pulse" />
-                  </g>
-
-                  {/* Block LB-31 (Eastern Stratigraphic) */}
-                  <polygon
-                    points="335,126 470,138 455,222 322,210"
-                    fill="rgba(22, 166, 166, 0.12)"
-                    stroke="#16A6A6"
-                    strokeWidth="1.8"
-                  />
-                  <text x="402" y="180" fill="#FFFFFF" fontSize="14" fontWeight="700" fontFamily="'Hanken Grotesk', system-ui, sans-serif" textAnchor="middle">LB-31</text>
-
-                  {/* 3D Seismic Coverage (TGS Reprocessing - 6,167 km²) */}
-                  <polygon
-                    points="56,114 458,148 444,212 42,178"
-                    fill="rgba(227, 155, 47, 0.04)"
-                    stroke="#E39B2F"
-                    strokeWidth="1.4"
-                    strokeDasharray="5 4"
-                  />
-                  <text x="254" y="248" fill="#E39B2F" fontSize="11" fontWeight="600" fontFamily="'Hanken Grotesk', system-ui, sans-serif" textAnchor="middle">6,167 km² 3D Seismic Reprocessing (TGS ASA)</text>
-
-                  {/* Cartographic Scale Bar & Geodetic Note */}
-                  <g transform="translate(416, 268)">
-                    <line x1="0" y1="6" x2="90" y2="6" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.2" />
-                    <line x1="0" y1="2" x2="0" y2="6" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.2" />
-                    <line x1="30" y1="3" x2="30" y2="6" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.2" />
-                    <line x1="60" y1="3" x2="60" y2="6" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.2" />
-                    <line x1="90" y1="2" x2="90" y2="6" stroke="rgba(255, 255, 255, 0.6)" strokeWidth="1.2" />
-                    <text x="0" y="17" fill="rgba(255, 255, 255, 0.7)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">0</text>
-                    <text x="26" y="17" fill="rgba(255, 255, 255, 0.7)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">25</text>
-                    <text x="56" y="17" fill="rgba(255, 255, 255, 0.7)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">50</text>
-                    <text x="80" y="17" fill="rgba(255, 255, 255, 0.7)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">100 km</text>
-                  </g>
-                </svg>
+                <img
+                  src="/img/harper-basin-concession-map.png"
+                  alt="Reconnaissance Licence RL-003 Concession Blocks LB-26, LB-30, and LB-31 Satellite & Bathymetry Map, Harper Basin Offshore Liberia"
+                  width={529}
+                  height={393}
+                  className="concession-map-img"
+                  loading="lazy"
+                />
               </div>
 
               {/* Map Legend */}

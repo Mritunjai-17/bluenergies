@@ -273,427 +273,141 @@ export default function ExplorationPotential() {
                   </div>
                 </>
               ) : (
-                <>
-                  {/* View 2: High-Precision Human-Engineered Technical 2D Cross-Section */}
-                  <div
-                    className="geo-svg-stage"
-                    ref={svgRef}
-                    onMouseMove={handleSvgMouseMove}
-                    onMouseLeave={handleSvgMouseLeave}
-                  >
-                    {/* Quiet Status Pill: AVO Direct Hydrocarbon Indicator */}
-                    <div className="geo-stage-telemetry" aria-label="AVO Anomaly Status">
-                      <span className="geo-telemetry-dot" aria-hidden="true"></span>
-                      <span className="geo-telemetry-text">AVO Class II/III Hydrocarbon Anomaly</span>
+                /* View 2: High-Definition Regional 2D Seismic Profile Card */
+                <div className="geo-seismic-card">
+                  {/* Card Header (Crisp HTML Typography) */}
+                  <div className="geo-seismic-card-header">
+                    <div className="geo-seismic-header-left">
+                      <svg className="geo-seismic-wave-icon" viewBox="0 0 24 10" fill="none" aria-hidden="true">
+                        <path d="M1 5C4 1 7 9 10 5C13 1 16 9 19 5C21 2.5 22.5 3 23 5" stroke="#51C2C9" strokeWidth="2" strokeLinecap="round" />
+                      </svg>
+                      <h4 className="geo-seismic-card-title">Harper Basin – Regional 2D Seismic Profile</h4>
                     </div>
+                    <span className="geo-seismic-badge-pill">Illustrative</span>
+                  </div>
+
+                  {/* Seismic Reflection Profile Stage (Vector Overlay with High-Resolution Seismic Volume) */}
+                  <div className="geo-seismic-stage-canvas">
                     <svg
                       viewBox="0 0 940 440"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="geological-cross-svg"
+                      className="geo-seismic-vector-svg"
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
-                      aria-label="Geological Cross-Section showing Cretaceous continental slope, submarine canyon, basin floor, and stacked turbidite fan reservoir deposits"
+                      aria-label="Harper Basin – Regional 2D Seismic Profile showing Seafloor, Santonian Fan Target Reservoir, Marine Shale Seal, Feeder Canyon, and Potential Hydrocarbon Accumulation"
                     >
-                      <defs>
-                        {/* 1. Deep Ocean Bathymetric Water Gradient */}
-                        <linearGradient id="oceanWaterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" stopColor="#041525" />
-                          <stop offset="35%" stopColor="#08233A" />
-                          <stop offset="75%" stopColor="#0B304E" />
-                          <stop offset="100%" stopColor="#0E3C62" />
-                        </linearGradient>
+                      {/* 1. Underlying Ultra-High-Resolution 2D Broadband Seismic Reflection Volume */}
+                      <image
+                        href="/img/harper-basin-seismic-profile-hd.png"
+                        x="55"
+                        y="28"
+                        width="885"
+                        height="412"
+                        preserveAspectRatio="none"
+                      />
 
-                        {/* 2. Feeder Canyon Coarse Infill Gradient */}
-                        <linearGradient id="canyonInfillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#113F5E" />
-                          <stop offset="50%" stopColor="#1B5D88" />
-                          <stop offset="100%" stopColor="#113F5E" />
-                        </linearGradient>
+                      {/* 2. Top Geodetic Coordinate Axis (NW <---> SE) */}
+                      <rect x="0" y="0" width="940" height="28" fill="#04121E" />
+                      <text x="75" y="19" fill="#94A3B8" fontSize="11" fontWeight="700" fontFamily="'JetBrains Mono', monospace">NW</text>
+                      <line x1="105" y1="15" x2="885" y2="15" stroke="rgba(81, 194, 201, 0.4)" strokeWidth="1" strokeDasharray="3 3" />
+                      <text x="915" y="19" fill="#94A3B8" fontSize="11" fontWeight="700" fontFamily="'JetBrains Mono', monospace" textAnchor="end">SE</text>
+                      <line x1="0" y1="28" x2="940" y2="28" stroke="rgba(81, 194, 201, 0.25)" strokeWidth="1" />
 
-                        {/* 3. Authentic Sandstone Stipple Lithology Pattern (USGS / Geological Standard) */}
-                        <pattern id="sandstoneStipple" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
-                          <circle cx="2" cy="2" r="0.8" fill="#FDE68A" opacity="0.65" />
-                          <circle cx="8" cy="4" r="0.8" fill="#FBBF24" opacity="0.6" />
-                          <circle cx="5" cy="8" r="0.8" fill="#FDE68A" opacity="0.65" />
-                          <circle cx="11" cy="10" r="0.8" fill="#F59E0B" opacity="0.55" />
-                        </pattern>
+                      {/* 3. Left Vertical TWT (Two-Way Travel Time) Axis Grid */}
+                      <rect x="0" y="28" width="55" height="412" fill="#04121E" />
+                      <line x1="55" y1="28" x2="55" y2="440" stroke="rgba(81, 194, 201, 0.25)" strokeWidth="1" />
+                      <text transform="rotate(-90)" x="-234" y="18" fill="#94A3B8" fontSize="10.5" fontWeight="700" fontFamily="'JetBrains Mono', monospace" textAnchor="middle">
+                        TWT (s)
+                      </text>
+                      <text x="34" y="52" fill="#CBD5E1" fontSize="10" fontWeight="600" fontFamily="'JetBrains Mono', monospace">0.0</text>
+                      <text x="34" y="112" fill="#CBD5E1" fontSize="10" fontWeight="600" fontFamily="'JetBrains Mono', monospace">1.0</text>
+                      <text x="34" y="174" fill="#CBD5E1" fontSize="10" fontWeight="600" fontFamily="'JetBrains Mono', monospace">2.0</text>
+                      <text x="34" y="236" fill="#CBD5E1" fontSize="10" fontWeight="600" fontFamily="'JetBrains Mono', monospace">3.0</text>
+                      <text x="34" y="298" fill="#CBD5E1" fontSize="10" fontWeight="600" fontFamily="'JetBrains Mono', monospace">4.0</text>
+                      <text x="34" y="360" fill="#CBD5E1" fontSize="10" fontWeight="600" fontFamily="'JetBrains Mono', monospace">5.0</text>
+                      <text x="34" y="420" fill="#CBD5E1" fontSize="10" fontWeight="600" fontFamily="'JetBrains Mono', monospace">6.0</text>
 
-                        {/* 4. Fine Shale Laminations Pattern (Impermeable Seal) */}
-                        <pattern id="shaleDashPattern" x="0" y="0" width="16" height="8" patternUnits="userSpaceOnUse">
-                          <line x1="2" y1="2" x2="8" y2="2" stroke="rgba(81, 194, 201, 0.4)" strokeWidth="0.8" />
-                          <line x1="10" y1="6" x2="15" y2="6" stroke="rgba(81, 194, 201, 0.35)" strokeWidth="0.8" />
-                        </pattern>
+                      {/* 4. Razor-Sharp Vector Callout Badges with White Cards & Pointers */}
+                      {/* Callout A: Seafloor */}
+                      <g>
+                        <line x1="463" y1="128" x2="463" y2="154" stroke="#38BDF8" strokeWidth="1.5" />
+                        <circle cx="463" cy="154" r="3" fill="#38BDF8" stroke="#FFFFFF" strokeWidth="1" />
+                        <rect x="418" y="102" width="90" height="26" rx="4" fill="#FFFFFF" stroke="#38BDF8" strokeWidth="1.2" />
+                        <text x="463" y="119" fill="#071B29" fontSize="11" fontWeight="700" fontFamily="'Inter', system-ui, sans-serif" textAnchor="middle">Seafloor</text>
+                      </g>
 
-                        {/* 5. Turbidite Fan Sandstone Shaded Gradients */}
-                        <linearGradient id="fanMainReservoirGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="#B45309" />
-                          <stop offset="15%" stopColor="#D97706" />
-                          <stop offset="45%" stopColor="#F59E0B" />
-                          <stop offset="75%" stopColor="#FBBF24" />
-                          <stop offset="100%" stopColor="#B45309" />
-                        </linearGradient>
+                      {/* Callout B: Feeder Canyon (Sediment Supply) */}
+                      <g>
+                        <line x1="278" y1="256" x2="300" y2="246" stroke="#94A3B8" strokeWidth="1.5" />
+                        <circle cx="300" cy="246" r="3" fill="#FFFFFF" stroke="#071B29" strokeWidth="1" />
+                        <rect x="122" y="244" width="156" height="34" rx="4" fill="#FFFFFF" stroke="#94A3B8" strokeWidth="1.2" />
+                        <text x="200" y="259" fill="#071B29" fontSize="11" fontWeight="700" fontFamily="'Inter', system-ui, sans-serif" textAnchor="middle">Feeder Canyon</text>
+                        <text x="200" y="271.5" fill="#4A6070" fontSize="8.5" fontWeight="600" fontFamily="'Inter', system-ui, sans-serif" textAnchor="middle">(Sediment Supply)</text>
+                      </g>
 
-                        <linearGradient id="fanCoreSweetSpot" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.3" />
-                          <stop offset="50%" stopColor="#FEF08A" stopOpacity="0.85" />
-                          <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.3" />
-                        </linearGradient>
+                      {/* Callout C: Santonian Fan (Target Reservoir) */}
+                      <g>
+                        <line x1="420" y1="190" x2="462" y2="256" stroke="#F59E0B" strokeWidth="1.5" />
+                        <circle cx="462" cy="256" r="3" fill="#F59E0B" stroke="#FFFFFF" strokeWidth="1" />
+                        <rect x="338" y="156" width="164" height="34" rx="4" fill="#FFFFFF" stroke="#F59E0B" strokeWidth="1.2" />
+                        <text x="420" y="171" fill="#071B29" fontSize="11" fontWeight="700" fontFamily="'Inter', system-ui, sans-serif" textAnchor="middle">Santonian Fan</text>
+                        <text x="420" y="183.5" fill="#4A6070" fontSize="8.5" fontWeight="600" fontFamily="'Inter', system-ui, sans-serif" textAnchor="middle">(Target Reservoir)</text>
+                      </g>
 
-                        <clipPath id="diagramCanvasClip">
-                          <rect width="940" height="440" rx="0" />
-                        </clipPath>
-                      </defs>
+                      {/* Callout D: Marine Shale Seal */}
+                      <g>
+                        <line x1="769" y1="192" x2="824" y2="244" stroke="#51C2C9" strokeWidth="1.5" />
+                        <circle cx="824" cy="244" r="3" fill="#51C2C9" stroke="#FFFFFF" strokeWidth="1" />
+                        <rect x="696" y="166" width="146" height="26" rx="4" fill="#FFFFFF" stroke="#51C2C9" strokeWidth="1.2" />
+                        <text x="769" y="183.5" fill="#071B29" fontSize="11" fontWeight="700" fontFamily="'Inter', system-ui, sans-serif" textAnchor="middle">Marine Shale Seal</text>
+                      </g>
 
-                      <g clipPath="url(#diagramCanvasClip)">
-                        {/* Dark Subsurface Canvas Base */}
-                        <rect width="940" height="440" fill="#04121E" />
+                      {/* Callout E: Potential Hydrocarbon Accumulation */}
+                      <g>
+                        <line x1="791" y1="292" x2="791" y2="270" stroke="#EF4444" strokeWidth="1.5" />
+                        <circle cx="791" cy="270" r="3" fill="#EF4444" stroke="#FFFFFF" strokeWidth="1" />
+                        <rect x="712" y="292" width="180" height="34" rx="4" fill="#FFFFFF" stroke="#EF4444" strokeWidth="1.2" />
+                        <text x="802" y="307" fill="#071B29" fontSize="10.5" fontWeight="700" fontFamily="'Inter', system-ui, sans-serif" textAnchor="middle">Potential</text>
+                        <text x="802" y="319.5" fill="#071B29" fontSize="10.5" fontWeight="700" fontFamily="'Inter', system-ui, sans-serif" textAnchor="middle">Hydrocarbon Accumulation</text>
+                      </g>
 
-                        {/* Horizontal Seismic Time/Depth Guidelines (Grid Hairlines) */}
-                        <line x1="66" y1="50" x2="874" y2="50" stroke="rgba(81, 194, 201, 0.09)" strokeWidth="1" strokeDasharray="2 4" />
-                        <line x1="66" y1="120" x2="874" y2="120" stroke="rgba(81, 194, 201, 0.09)" strokeWidth="1" strokeDasharray="2 4" />
-                        <line x1="66" y1="190" x2="874" y2="190" stroke="rgba(81, 194, 201, 0.09)" strokeWidth="1" strokeDasharray="2 4" />
-                        <line x1="66" y1="260" x2="874" y2="260" stroke="rgba(81, 194, 201, 0.09)" strokeWidth="1" strokeDasharray="2 4" />
-                        <line x1="66" y1="330" x2="874" y2="330" stroke="rgba(81, 194, 201, 0.09)" strokeWidth="1" strokeDasharray="2 4" />
-                        <line x1="66" y1="400" x2="874" y2="400" stroke="rgba(81, 194, 201, 0.09)" strokeWidth="1" strokeDasharray="2 4" />
-
-                        {/* -------------------------------------------------------------
-                            GEOLOGICAL STRATA 1: PRE-CRETACEOUS ACOUSTIC BASEMENT
-                            ------------------------------------------------------------- */}
-                        <path
-                          d="M66 440 L874 440 L874 365 C760 370 640 372 520 365 C390 358 260 330 160 295 L66 260 Z"
-                          fill="#051522"
-                          className={`geo-stratum ${activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-                        {/* Basement Fractures / Shear Fabric */}
-                        <path d="M120 340 L160 440 M260 350 L300 440 M420 370 L450 440 M680 375 L710 440" stroke="rgba(255, 255, 255, 0.07)" strokeWidth="1.2" strokeDasharray="6 4" />
-
-                        {/* -------------------------------------------------------------
-                            GEOLOGICAL STRATA 2: ALBIAN MATURE MARINE SOURCE KITCHEN
-                            ------------------------------------------------------------- */}
-                        <path
-                          d="M66 260 L160 295 C260 330 390 358 520 365 C640 372 760 370 874 365 L874 315 C750 320 620 315 490 305 C370 294 240 255 140 210 L66 180 Z"
-                          fill="#091F2E"
-                          className={`geo-stratum ${activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-                        {/* Source Rock Organic-Rich Marker Horizon */}
-                        <path d="M100 235 C220 278 350 310 480 320 C610 330 740 332 874 326" stroke="#2DD4BF" strokeWidth="0.8" strokeDasharray="4 3" opacity="0.45" />
-
-                        {/* -------------------------------------------------------------
-                            GEOLOGICAL STRATA 3: CRETACEOUS SLOPE CLASTICS FAIRWAY
-                            ------------------------------------------------------------- */}
-                        <path
-                          d="M66 82 L180 96 C320 152 440 208 440 208 L874 216 L874 315 C750 320 620 315 490 305 C370 294 240 255 140 210 L66 180 Z"
-                          fill="#0D2B3F"
-                          className={`geo-stratum ${activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-
-                        {/* Cretaceous Clinoforms (Seismic Deposition Geometry) */}
-                        <path d="M78 122 C185 148 300 190 435 228" stroke="rgba(81, 194, 201, 0.16)" strokeWidth="1" />
-                        <path d="M98 152 C210 185 330 226 460 260" stroke="rgba(81, 194, 201, 0.16)" strokeWidth="1" />
-                        <path d="M120 182 C230 218 350 258 485 292" stroke="rgba(81, 194, 201, 0.16)" strokeWidth="1" />
-
-                        {/* -------------------------------------------------------------
-                            GEOLOGICAL STRATA 4: REGIONAL TRANSGRESSIVE MARINE SHALE SEAL
-                            ------------------------------------------------------------- */}
-                        <path
-                          d="M340 220 C450 208 580 204 710 208 C790 212 874 216 874 242 C874 260 780 254 660 248 C540 242 420 238 340 230 Z"
-                          fill="#133F4E"
-                          className={`geo-stratum ${activeHorizon === 'shale' ? 'is-highlighted-teal' : activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-                        {/* Shale Texture Fill */}
-                        <path
-                          d="M340 220 C450 208 580 204 710 208 C790 212 874 216 874 242 C874 260 780 254 660 248 C540 242 420 238 340 230 Z"
-                          fill="url(#shaleDashPattern)"
-                          opacity="0.8"
-                          className={`geo-stratum ${activeHorizon === 'shale' ? 'is-highlighted-teal' : activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-
-                        {/* -------------------------------------------------------------
-                            GEOLOGICAL STRATA 5: INCISED SUBMARINE FEEDER CANYON
-                            ------------------------------------------------------------- */}
-                        <path
-                          d="M230 118 C285 142 350 180 435 208 C385 218 320 188 230 118 Z"
-                          fill="url(#canyonInfillGrad)"
-                          stroke="rgba(81, 194, 201, 0.45)"
-                          strokeWidth="1"
-                          className={`geo-stratum ${activeHorizon === 'canyon' ? 'is-highlighted-teal' : activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-
-                        {/* -------------------------------------------------------------
-                            GEOLOGICAL STRATA 6: SANTONIAN BASIN FLOOR TURBIDITE FAN COMPLEX
-                            (Authentic Lobate Shingled Fairway with Realistic Geometry)
-                            ------------------------------------------------------------- */}
-                        {/* Basal Fan Lobe 3 */}
-                        <path
-                          d="M430 278 C520 262 650 258 775 266 C835 270 865 280 835 288 C760 298 610 298 510 294 C460 291 410 286 430 278 Z"
-                          fill="#B45309"
-                          opacity="0.85"
-                          className={`geo-stratum ${activeHorizon === 'reservoir' ? 'is-highlighted-amber' : activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-
-                        {/* Main Target Fan Lobe 2 (Stratigraphic Pinchout & Internal Channel Axis) */}
-                        <path
-                          d="M390 248 C480 230 635 224 775 236 C840 242 870 255 835 263 C755 274 570 274 480 268 C430 264 375 256 390 248 Z"
-                          fill="url(#fanMainReservoirGrad)"
-                          stroke="#F6C561"
-                          strokeWidth="1.2"
-                          className={`geo-stratum ${activeHorizon === 'reservoir' ? 'is-highlighted-amber' : activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-
-                        {/* Sandstone Geological Stipple Texture */}
-                        <path
-                          d="M390 248 C480 230 635 224 775 236 C840 242 870 255 835 263 C755 274 570 274 480 268 C430 264 375 256 390 248 Z"
-                          fill="url(#sandstoneStipple)"
-                          opacity="0.65"
-                          className={`geo-stratum ${activeHorizon === 'reservoir' ? 'is-highlighted-amber' : activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-
-                        {/* Upper Depositional Fan Lobe 1 */}
-                        <path
-                          d="M460 232 C530 218 655 215 770 223 C825 228 850 238 820 244 C760 254 620 252 535 248 C490 245 440 240 460 232 Z"
-                          fill="#D97706"
-                          opacity="0.85"
-                          className={`geo-stratum ${activeHorizon === 'reservoir' ? 'is-highlighted-amber' : activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-
-                        {/* AVO Class II/III Amplitude Anomaly Sweet Spot (Hydrocarbon Indicator Envelope) */}
-                        <path
-                          d="M480 246 C560 236 680 234 780 242 C830 246 845 254 815 258 C745 266 595 265 520 260 C475 257 445 252 480 246 Z"
-                          fill="url(#fanCoreSweetSpot)"
-                          className={`geo-stratum ${activeHorizon === 'reservoir' ? 'is-highlighted-amber' : activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-
-                        {/* Internal Seismic Reflection Lines inside Fan */}
-                        <path d="M430 254 C530 242 660 240 760 248" stroke="#FEF08A" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.6" />
-                        <path d="M460 264 C560 254 680 252 780 258" stroke="#FEF08A" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.6" />
-
-                        {/* -------------------------------------------------------------
-                            GEOLOGICAL STRATA 7: DEEP OCEAN WATER COLUMN
-                            ------------------------------------------------------------- */}
-                        <path
-                          d="M66 50 L874 50 L874 216 L440 208 C320 152 180 96 66 82 Z"
-                          fill="url(#oceanWaterGrad)"
-                        />
-                        {/* Sea Surface Water Line (0m MSL Datum) */}
-                        <line x1="66" y1="50" x2="874" y2="50" stroke="rgba(81, 194, 201, 0.45)" strokeWidth="1.2" />
-
-                        {/* Seafloor / Mudline Boundary Line */}
-                        <path
-                          d="M66 82 L180 96 C320 152 440 208 440 208 L874 216"
-                          stroke="#2DD4BF"
-                          strokeWidth="1.6"
-                        />
-
-                        {/* -------------------------------------------------------------
-                            SYNTHETIC EXTENSIONAL GROWTH FAULTS
-                            ------------------------------------------------------------- */}
-                        <g stroke="rgba(255, 255, 255, 0.5)" strokeWidth="1" strokeDasharray="4 3">
-                          <line x1="560" y1="235" x2="515" y2="415" />
-                          <line x1="720" y1="248" x2="680" y2="415" />
-                          <line x1="840" y1="262" x2="805" y2="415" />
-                        </g>
-                        {/* Downthrown Fault Arrows */}
-                        <path d="M545 290 L541 300 L549 300 Z" fill="rgba(255, 255, 255, 0.6)" />
-                        <path d="M705 305 L701 315 L709 315 Z" fill="rgba(255, 255, 255, 0.6)" />
-
-                        {/* -------------------------------------------------------------
-                            EXPLORATION DRILLSHIP & WELLBORE TRAJECTORY (BLU-RL003-1X)
-                            ------------------------------------------------------------- */}
-                        {/* 1. Surface Drillship Silhouette at Sea Level */}
-                        <g transform="translate(685, 41)" className={`geo-stratum ${activeHorizon === 'trajectory' ? 'callout-trajectory is-highlighted-trajectory' : activeHorizon !== 'all' ? 'is-dimmed' : ''}`}>
-                          <polygon points="0,9 6,2 34,2 40,9" fill="#FFFFFF" opacity="0.95" />
-                          <rect x="15" y="-3" width="10" height="5" fill="#51C2C9" />
-                          <line x1="20" y1="-8" x2="20" y2="-3" stroke="#F6C561" strokeWidth="1.5" />
-                          <circle cx="20" cy="-9" r="1.5" fill="#F6C561" />
-                        </g>
-
-                        {/* 2. Deepwater Marine Riser through Water Column */}
-                        <line
-                          x1="705" y1="50" x2="705" y2="214"
-                          stroke="#51C2C9" strokeWidth="1.5"
-                          className={`geo-stratum ${activeHorizon === 'trajectory' ? 'callout-trajectory is-highlighted-trajectory' : activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-
-                        {/* 3. Subsea Wellhead & Blow-Out Preventer at Seabed (-2,150m) */}
-                        <rect
-                          x="701" y="210" width="8" height="7" rx="1"
-                          fill="#51C2C9" stroke="#04121E" strokeWidth="1"
-                          className={`geo-stratum ${activeHorizon === 'trajectory' ? 'callout-trajectory is-highlighted-trajectory' : activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-
-                        {/* 4. Deviated Subsurface Wellbore Trajectory Path */}
-                        <path
-                          d="M705 214 L705 238 C705 245 700 252 690 258 L665 272"
-                          stroke="#F6C561"
-                          strokeWidth="2.2"
-                          fill="none"
-                          className={`geo-stratum ${activeHorizon === 'trajectory' ? 'callout-trajectory is-highlighted-trajectory' : activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-
-                        {/* 5. Perforated Target Pay Zone (Glow Marker) */}
-                        <circle
-                          cx="678" cy="265" r="4"
-                          fill="#FEF08A" stroke="#B45309" strokeWidth="1.5"
-                          className={`geo-stratum ${activeHorizon === 'trajectory' ? 'callout-trajectory is-highlighted-trajectory' : activeHorizon !== 'all' ? 'is-dimmed' : ''}`}
-                        />
-
-                        {/* -------------------------------------------------------------
-                            HUMAN-CRAFTED SCIENTIFIC LEADER LINES & ANNOTATION FLAGS
-                            ------------------------------------------------------------- */}
-                        {/* Callout 1: Seafloor / Mudline */}
-                        <g className="geo-callout-group">
-                          <text x="350" y="75" fill="#E2E8F0" fontSize="10" fontWeight="600" fontFamily="'Hanken Grotesk', system-ui, sans-serif">Seafloor / Mudline (-2,150m MSL)</text>
-                          <path d="M345 78 L310 95 L270 95" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="0.9" fill="none" />
-                          <circle cx="270" cy="95" r="2" fill="#51C2C9" />
-                        </g>
-
-                        {/* Callout 2: Submarine Feeder Canyon */}
-                        <g className={`geo-callout-group ${activeHorizon === 'canyon' ? 'is-highlighted-teal' : ''}`}>
-                          <text x="180" y="170" fill="#E2E8F0" fontSize="10" fontWeight="600" fontFamily="'Hanken Grotesk', system-ui, sans-serif">Submarine Feeder Canyon</text>
-                          <text x="180" y="182" fill="rgba(81, 194, 201, 0.9)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">Slope Canyon Throat Incision</text>
-                          <path d="M260 162 L290 152 L315 152" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="0.9" fill="none" />
-                          <circle cx="315" cy="152" r="2" fill="#51C2C9" />
-                        </g>
-
-                        {/* Callout 3: Upper Cretaceous Regional Marine Shale Seal */}
-                        <g className={`geo-callout-group ${activeHorizon === 'shale' ? 'is-highlighted-teal' : ''}`}>
-                          <text x="440" y="175" fill="#E2E8F0" fontSize="10" fontWeight="600" fontFamily="'Hanken Grotesk', system-ui, sans-serif">Regional Marine Shale Seal</text>
-                          <text x="440" y="187" fill="rgba(81, 194, 201, 0.9)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">Impermeable Transgressive Cap</text>
-                          <path d="M495 190 L515 210 L545 224" stroke="rgba(255, 255, 255, 0.65)" strokeWidth="0.9" fill="none" />
-                          <circle cx="545" cy="224" r="2" fill="#51C2C9" />
-                        </g>
-
-                        {/* Callout 4: Santonian Turbidite Fan Fairway */}
-                        <g className={`geo-callout-group ${activeHorizon === 'reservoir' ? 'is-highlighted-amber' : ''}`}>
-                          <rect x="520" y="125" width="168" height="38" rx="4" fill="rgba(4, 18, 30, 0.92)" stroke="rgba(246, 197, 97, 0.4)" strokeWidth="1" />
-                          <text x="530" y="140" fill="#FDE68A" fontSize="9.5" fontWeight="700" fontFamily="'Hanken Grotesk', system-ui, sans-serif">Santonian Basin Floor Fan</text>
-                          <text x="530" y="153" fill="rgba(255, 255, 255, 0.8)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">Stacked Turbidite Reservoir Pay</text>
-                          <path d="M604 163 L604 195 L615 240" stroke="#F6C561" strokeWidth="1" fill="none" strokeDasharray="2 2" />
-                          <circle cx="615" cy="240" r="2.5" fill="#F6C561" />
-                        </g>
-
-                        {/* Callout 5: Wellbore Prospect BLU-RL003-1X Flag */}
-                        <g className={`geo-callout-group ${activeHorizon === 'trajectory' ? 'callout-trajectory is-highlighted-trajectory' : ''}`}>
-                          <rect x="735" y="80" width="138" height="52" rx="4" fill="rgba(4, 18, 30, 0.94)" stroke="#F6C561" strokeWidth="1.2" />
-                          <text x="745" y="96" fill="#F6C561" fontSize="9.5" fontWeight="700" fontFamily="'JetBrains Mono', monospace">PROSPECT BLU-RL003-1X</text>
-                          <text x="745" y="110" fill="#FFFFFF" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">Water Depth: 2,150m</text>
-                          <text x="745" y="123" fill="#51C2C9" fontSize="8" fontFamily="'JetBrains Mono', monospace">Target TVD: ~3,420m MSL</text>
-                          <path d="M735 106 L715 106 L705 85" stroke="#F6C561" strokeWidth="1" fill="none" />
-                          <circle cx="705" cy="85" r="2.5" fill="#F6C561" />
-                        </g>
-
-                        {/* -------------------------------------------------------------
-                            LEFT & RIGHT DUAL CALIBRATION AXES (DEPTH & TWO-WAY TIME)
-                            ------------------------------------------------------------- */}
-                        {/* Left Depth Axis Panel */}
-                        <rect x="0" y="0" width="66" height="440" fill="#030D16" />
-                        <line x1="66" y1="0" x2="66" y2="440" stroke="rgba(81, 194, 201, 0.25)" strokeWidth="1" />
-                        <text x="33" y="28" fill="rgba(81, 194, 201, 0.85)" fontSize="8" fontFamily="'JetBrains Mono', monospace" fontWeight="700" textAnchor="middle">DEPTH (m)</text>
-
-                        <line x1="60" y1="50" x2="66" y2="50" stroke="rgba(81, 194, 201, 0.5)" strokeWidth="1" />
-                        <text x="56" y="53" fill="rgba(255, 255, 255, 0.7)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace" textAnchor="end">0</text>
-
-                        <line x1="60" y1="120" x2="66" y2="120" stroke="rgba(81, 194, 201, 0.5)" strokeWidth="1" />
-                        <text x="56" y="123" fill="rgba(255, 255, 255, 0.7)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace" textAnchor="end">1,000</text>
-
-                        <line x1="60" y1="190" x2="66" y2="190" stroke="rgba(81, 194, 201, 0.5)" strokeWidth="1" />
-                        <text x="56" y="193" fill="rgba(255, 255, 255, 0.7)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace" textAnchor="end">2,000</text>
-
-                        <line x1="60" y1="260" x2="66" y2="260" stroke="#F6C561" strokeWidth="1.5" />
-                        <text x="56" y="263" fill="#F6C561" fontSize="8.5" fontFamily="'JetBrains Mono', monospace" fontWeight="700" textAnchor="end">3,000</text>
-
-                        <line x1="60" y1="330" x2="66" y2="330" stroke="rgba(81, 194, 201, 0.5)" strokeWidth="1" />
-                        <text x="56" y="333" fill="rgba(255, 255, 255, 0.7)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace" textAnchor="end">4,000</text>
-
-                        <line x1="60" y1="400" x2="66" y2="400" stroke="rgba(81, 194, 201, 0.5)" strokeWidth="1" />
-                        <text x="56" y="403" fill="rgba(255, 255, 255, 0.7)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace" textAnchor="end">5,000</text>
-
-                        {/* Right Two-Way Traveltime (TWT) Axis Panel */}
-                        <rect x="874" y="0" width="66" height="440" fill="#030D16" />
-                        <line x1="874" y1="0" x2="874" y2="440" stroke="rgba(81, 194, 201, 0.25)" strokeWidth="1" />
-                        <text x="907" y="28" fill="rgba(81, 194, 201, 0.85)" fontSize="8" fontFamily="'JetBrains Mono', monospace" fontWeight="700" textAnchor="middle">TWT (s)</text>
-
-                        <line x1="874" y1="50" x2="880" y2="50" stroke="rgba(81, 194, 201, 0.5)" strokeWidth="1" />
-                        <text x="884" y="53" fill="rgba(255, 255, 255, 0.7)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">0.0s</text>
-
-                        <line x1="874" y1="120" x2="880" y2="120" stroke="rgba(81, 194, 201, 0.5)" strokeWidth="1" />
-                        <text x="884" y="123" fill="rgba(255, 255, 255, 0.7)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">1.5s</text>
-
-                        <line x1="874" y1="190" x2="880" y2="190" stroke="rgba(81, 194, 201, 0.5)" strokeWidth="1" />
-                        <text x="884" y="193" fill="rgba(255, 255, 255, 0.7)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">3.0s</text>
-
-                        <line x1="874" y1="260" x2="880" y2="260" stroke="#F6C561" strokeWidth="1.5" />
-                        <text x="884" y="263" fill="#F6C561" fontSize="8.5" fontFamily="'JetBrains Mono', monospace" fontWeight="700">4.5s</text>
-
-                        <line x1="874" y1="330" x2="880" y2="330" stroke="rgba(81, 194, 201, 0.5)" strokeWidth="1" />
-                        <text x="884" y="333" fill="rgba(255, 255, 255, 0.7)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">6.0s</text>
-
-                        <line x1="874" y1="400" x2="880" y2="400" stroke="rgba(81, 194, 201, 0.5)" strokeWidth="1" />
-                        <text x="884" y="403" fill="rgba(255, 255, 255, 0.7)" fontSize="8.5" fontFamily="'JetBrains Mono', monospace">7.5s</text>
-
-                        {/* Top Orientation Geographic Coordinates */}
-                        <text x="80" y="38" fill="rgba(255, 255, 255, 0.85)" fontSize="9.5" fontFamily="'JetBrains Mono', monospace" fontWeight="700">NE (LIBERIAN SHELF EDGE)</text>
-                        <text x="860" y="38" fill="rgba(255, 255, 255, 0.85)" fontSize="9.5" fontFamily="'JetBrains Mono', monospace" fontWeight="700" textAnchor="end">SW (DEEPWATER HARPER BASIN)</text>
-
-                        {/* Interactive Cursor Dynamic Crosshair Depth Reticle */}
-                        {cursorPos && (
-                          <g className="geo-cursor-reticle" pointerEvents="none">
-                            <line x1="66" y1={cursorPos.y} x2="874" y2={cursorPos.y} stroke="rgba(81, 194, 201, 0.5)" strokeWidth="1" strokeDasharray="3 3" />
-                            <line x1={cursorPos.x} y1="0" x2={cursorPos.x} y2="440" stroke="rgba(81, 194, 201, 0.5)" strokeWidth="1" strokeDasharray="3 3" />
-                            <circle cx={cursorPos.x} cy={cursorPos.y} r="4" fill="#2DD4BF" stroke="#04121E" strokeWidth="1.5" />
-                            <g transform={`translate(${Math.min(730, Math.max(76, cursorPos.x + 10))}, ${Math.max(20, Math.min(410, cursorPos.y - 14))})`}>
-                              <rect width="124" height="22" rx="3" fill="rgba(4, 18, 30, 0.95)" stroke="rgba(81, 194, 201, 0.45)" strokeWidth="1" />
-                              <text x="62" y="14.5" fill="#2DD4BF" fontSize="9" fontWeight="700" fontFamily="'JetBrains Mono', monospace" textAnchor="middle">
-                                TVDSS: ~{cursorPos.depth.toLocaleString()}m MSL
-                              </text>
-                            </g>
-                          </g>
-                        )}
+                      {/* 5. Razor-Sharp Vector Scale Bar */}
+                      <g transform="translate(680, 388)">
+                        <rect width="210" height="32" rx="4" fill="#04121E" opacity="0.94" stroke="rgba(81, 194, 201, 0.25)" strokeWidth="1" />
+                        <line x1="20" y1="11" x2="190" y2="11" stroke="#FFFFFF" strokeWidth="1.5" />
+                        <line x1="20" y1="6" x2="20" y2="11" stroke="#FFFFFF" strokeWidth="1.5" />
+                        <line x1="62.5" y1="7" x2="62.5" y2="11" stroke="#FFFFFF" strokeWidth="1.5" />
+                        <line x1="105" y1="7" x2="105" y2="11" stroke="#FFFFFF" strokeWidth="1.5" />
+                        <line x1="147.5" y1="7" x2="147.5" y2="11" stroke="#FFFFFF" strokeWidth="1.5" />
+                        <line x1="190" y1="6" x2="190" y2="11" stroke="#FFFFFF" strokeWidth="1.5" />
+                        <text x="20" y="23" fill="#E2E8F0" fontSize="8.5" fontFamily="'JetBrains Mono', monospace" textAnchor="middle">0</text>
+                        <text x="62.5" y="23" fill="#E2E8F0" fontSize="8.5" fontFamily="'JetBrains Mono', monospace" textAnchor="middle">10</text>
+                        <text x="105" y="23" fill="#E2E8F0" fontSize="8.5" fontFamily="'JetBrains Mono', monospace" textAnchor="middle">20</text>
+                        <text x="147.5" y="23" fill="#E2E8F0" fontSize="8.5" fontFamily="'JetBrains Mono', monospace" textAnchor="middle">30</text>
+                        <text x="190" y="23" fill="#E2E8F0" fontSize="8.5" fontFamily="'JetBrains Mono', monospace" textAnchor="middle">40 km</text>
                       </g>
                     </svg>
                   </div>
 
-                  {/* Figure Footer: Lithological Legend & Fixed Clean Scale Bar */}
-                  <div className="geo-diagram-footer">
-                    <div className="geo-diagram-legend">
-                      <div className="geo-legend-item">
-                        <span className="geo-swatch geo-sand" aria-hidden="true"></span>
-                        <span>Santonian Turbidite Fan (Target)</span>
-                      </div>
-                      <div className="geo-legend-item">
-                        <span className="geo-swatch geo-shale" aria-hidden="true"></span>
-                        <span>Upper Cretaceous Marine Shale (Seal)</span>
-                      </div>
-                      <div className="geo-legend-item">
-                        <span className="geo-swatch geo-slope" aria-hidden="true"></span>
-                        <span>Tertiary Clastics Slope</span>
-                      </div>
-                      <div className="geo-legend-item">
-                        <span className="geo-swatch geo-basement" aria-hidden="true"></span>
-                        <span>Albian Source Kitchen / Basement</span>
-                      </div>
-                      <div className="geo-legend-item">
-                        <span className="geo-swatch geo-fault" aria-hidden="true"></span>
-                        <span>Growth Fault Displacements</span>
-                      </div>
+                  {/* Card Footer Legend (Crisp HTML Typography) */}
+                  <div className="geo-seismic-card-legend">
+                    <div className="geo-legend-item">
+                      <span className="geo-swatch geo-sand" aria-hidden="true"></span>
+                      <span>Santonian Turbidite Fan (Target)</span>
                     </div>
-
-                    <div className="geo-diagram-scale" aria-label="Scale bar: approximately 30 kilometers horizontal">
-                      <div className="scale-marks">
-                        <span>0</span>
-                        <span>10 km</span>
-                        <span>20 km</span>
-                        <span>30 km</span>
-                      </div>
-                      <div className="scale-ruler" aria-hidden="true">
-                        <div className="scale-seg"></div>
-                        <div className="scale-seg"></div>
-                        <div className="scale-seg"></div>
-                      </div>
+                    <div className="geo-legend-item">
+                      <span className="geo-swatch geo-shale" aria-hidden="true"></span>
+                      <span>Upper Cretaceous Marine Shale (Seal)</span>
+                    </div>
+                    <div className="geo-legend-item">
+                      <span className="geo-swatch geo-slope" aria-hidden="true"></span>
+                      <span>Tertiary Clastics Slope</span>
+                    </div>
+                    <div className="geo-legend-item">
+                      <span className="geo-swatch geo-fault" aria-hidden="true"></span>
+                      <span>Growth Fault Displacements</span>
                     </div>
                   </div>
-                </>
+                </div>
               )}
             </div>
           </div>

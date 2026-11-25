@@ -31,8 +31,9 @@
   --border-dark: rgba(24, 126, 134, 0.22);
   --flare: #E7A12D;
 
-  --display: 'Fraunces', Georgia, serif;
-  --body: 'Hanken Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --display: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
 
   /* Typography scale */
   --font-h1: clamp(2.6rem, 6vw, 4.9rem);
